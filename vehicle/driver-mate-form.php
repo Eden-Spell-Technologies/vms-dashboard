@@ -7,12 +7,19 @@ if (!isset($_SESSION['user'])) {
     exit();
 }
 
-// Ek folder peeche (root par) jaane ke liye ../ use karein
-include("../sidebar.php");
-include("../nav.php");
 ?>
-<div id="main-wrapper" class="p-4 p-md-5">
-     <div id="driver-mate-detail-view" class=" fade-in">
+
+<?php
+include("../nav.php");
+
+?>
+<div id="dashboard-page">
+
+    <?php
+    include("../sidebar.php");
+    ?>
+    <div id="main-wrapper" class="p-4 p-md-5">
+        <div id="driver-mate-detail-view" class=" fade-in">
             <div class="d-flex align-items-center mb-4">
                 <a class="btn secondary-hover rounded-circle me-3" href="./driver-mate-detail.php" style="
                     width: 40px;
@@ -108,7 +115,9 @@ include("../nav.php");
                 </div>
             </div>
         </div>
+    </div>
 </div>
+
 
 <?php
 // Ek folder peeche ja kar footer include karein
