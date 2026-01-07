@@ -9,24 +9,27 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <link rel="stylesheet" href="style.css">
 
-<link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../style.css">
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <header class="top-navbar">
         <div class="d-flex align-items-center">
+            <div class="logo-area d-flex align-items-center justify-content-center">
+                <img src="https://devedenspell.com/MD/image/logo.png" class="logo-img" alt="Logo" />
+                <span class="vms-brand">CHAMPS VMA</span>
+            </div>
+        </div>
+
+
+        <div class="d-flex align-items-center">
+            <a href="/vms-frontend/auth/logout.php" class="text-decoration-none">
+                <button type="button" class="btn secondary-color btn-sm rounded-pill px-3">
+                    <i class="fas fa-sign-out-alt me-1"></i> Logout
+                </button>
+            </a>
             <button class="btn btn-link d-lg-none me-2" style="color: var(--secondary)" id="sidebarToggle">
                 <i class="fas fa-bars fa-lg"></i>
             </button>
-
-            <h4 id="view-title" class="fw-bold m-0 text-navy"></h4>
         </div>
-
-       <div class="d-flex align-items-center">
-    <a href="/vms-frontend/auth/logout.php" class="text-decoration-none">
-        <button type="button" class="btn secondary-color btn-sm rounded-pill px-3">
-            <i class="fas fa-sign-out-alt me-1"></i> Logout
-        </button>
-    </a>
-</div>
 
     </header>

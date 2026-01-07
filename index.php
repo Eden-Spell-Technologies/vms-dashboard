@@ -1,8 +1,5 @@
-<?php 
-include("sidebar.php");
-include("nav.php");
 
-?>
+
 
 <?php
 session_start();
@@ -13,10 +10,17 @@ if (!isset($_SESSION['user'])) {
 }
 ?>
 
+<?php
+  include("nav.php");
 
+?>
 <div id="dashboard-page"  >
-    
+  
+    <?php 
+include("sidebar.php");
+?>
 <div id="main-wrapper">
+  
 <div class="p-4 p-md-5">
           <div id="dashboard-view" class="fade-in">
             <div class="row g-4 mb-5">
@@ -41,8 +45,9 @@ if (!isset($_SESSION['user'])) {
               <div class="col-xl-4 col-md-6">
                 <div
                   class="action-card"
-                  onclick="showView('incident-mgmt-view', 'Incident & Intervention')"
+                  
                 >
+                <a href="./incident-intervention/incident-intervention.php" style="text-decoration: none; color: inherit ">
                   <div
                     class="icon-box bg-success-subtle text-success mx-auto mb-3"
                   >
@@ -50,6 +55,8 @@ if (!isset($_SESSION['user'])) {
                   </div>
                   <h5 class="fw-bold">Incident & Int.</h5>
                   <p class="small text-white">Repairs & reports</p>
+                </a>
+                  
                 </div>
               </div>
               <div class="col-xl-4 col-md-6">
