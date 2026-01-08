@@ -96,9 +96,7 @@ include("../nav.php");
               <th>Driver</th>
               <th>Make</th>
               <th>Model</th>
-              <th>Origin</th>
-              <th>Destination</th>
-              <th>Reg</th>
+             
               <th>Status</th>
               <th>Action</th>
             </tr>
@@ -109,9 +107,6 @@ include("../nav.php");
               <td>Zaid Ali</td>
               <td>Volkswagen</td>
               <td>Voyage</td>
-              <td>Enugu</td>
-              <td>Festac</td>
-              <td>123456</td>
               <td><span class="badge bg-success">Active</span></td>
               <td>
                 <a href="./vehicle-detail-form.php" class="btn btn-sm btn-light border">
@@ -145,6 +140,16 @@ include("../nav.php");
           <div class="col-md-6">
             <label class="small fw-bold mb-1">Fleet No</label>
             <input type="text" class="form-control border-dark shadow-sm" value="VH-789" />
+          </div>
+
+          <div class="col-md-6">
+            <label class="small fw-bold mb-1">Vehicle Manager Name</label>
+            <input type="text" class="form-control border-dark shadow-sm" value="John Doe" />
+          </div>
+
+           <div class="col-md-6">
+            <label class="small fw-bold mb-1">Vehicle Manager Email</label>
+            <input type="text" class="form-control border-dark shadow-sm" value="john.doe@example.com" />
           </div>
 
           <div class="col-md-6">

@@ -1,6 +1,6 @@
 <footer class="footer-main mt-auto">
     <div class="text-center py-2 small">
-        © 2025 CHAMPS VMA. All Rights Reserved.
+        © 2026 CHAMPS VMA. All Rights Reserved.
     </div>
 </footer>
 <script src="./script.js"></script>

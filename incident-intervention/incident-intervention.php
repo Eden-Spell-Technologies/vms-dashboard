@@ -66,34 +66,53 @@ include("../nav.php");
                 </div>
 
                 <div class="col-md-4 col-lg-4">
-                    <div class="vms-service-card" onclick="showView('accident-detail-view', 'Accident Reporting')">
+                    <a class="vms-service-card text-decoration-none" href="./accident.php">
                         <div class="icon-wrapper bg-red-light" style="background-color: #fef2f2; color: #dc2626">
                             <i class="fas fa-ambulance fa-lg"></i>
                         </div>
                         <h5>Accident</h5>
                         <p>Emergency crash reporting and damage assessment</p>
-                    </div>
+                    </a>
                 </div>
 
                 <div class="col-md-4 col-lg-4">
-                    <div class="vms-service-card" onclick="showView('bugged-down-view', 'Vehicle Bugged Down')">
+                    <a class="vms-service-card text-decoration-none" href="./vehicle-bugged-down.php">
                         <div class="icon-wrapper bg-green-light">
                             <i class="fas fa-truck-pickup fa-lg"></i>
                         </div>
                         <h5>Vehicle Bugged Down</h5>
                         <p>Recovery for vehicles stuck in off-road terrain</p>
-                    </div>
+                    </a>
                 </div>
 
                 <div class="col-md-4 col-lg-4">
-                    <div class="vms-service-card"
-                        onclick="showView('incident-history-view', 'Complete Incident History')">
+                    <a class="vms-service-card text-decoration-none" href="./route-diversion.php">
                         <div class="icon-wrapper bg-blue-light">
-                            <i class="fas fa-history fa-lg"></i>
+                            <i class="fas fa-route fa-lg"></i>
                         </div>
-                        <h5>Incident History</h5>
-                        <p>Archive of all past interventions and case resolutions</p>
-                    </div>
+                        <h5>Route Diversion</h5>
+                        <p>Manage and track temporary route changes and traffic diversions</p>
+                    </a>
+                </div>
+
+                <div class="col-md-4 col-lg-4">
+                    <a class="vms-service-card text-decoration-none" href="./driver-misconduct.php">
+                        <div class="icon-wrapper bg-orange-light">
+                            <i class="fas fa-user-slash fa-lg"></i>
+                        </div>
+                        <h5>Driver Misconduct</h5>
+                        <p>Report and track violations, behavioral issues, or policy breaches</p>
+                    </a>
+                </div>
+
+                <div class="col-md-4 col-lg-4">
+                    <a class="vms-service-card text-decoration-none" href="./illegal-haulage.php">
+                        <div class="icon-wrapper bg-yellow-light">
+                            <i class="fas fa-boxes fa-lg "></i>
+                        </div>
+                        <h5>Illegal Haulage</h5>
+                        <p>Monitor unauthorized cargo transportation and axle load violations</p>
+                    </a>
                 </div>
             </div>
         </div>

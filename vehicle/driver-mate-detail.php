@@ -167,8 +167,12 @@ include("../nav.php");
                 <form class="row g-3 px-2">
 
                     <div class="col-md-6">
-                        <label class="small fw-bold mb-1">Full Name</label>
-                        <input type="text" class="form-control border-dark shadow-sm" value="Ali Raza" />
+                        <label class="small fw-bold mb-1">First Name</label>
+                        <input type="text" class="form-control border-dark shadow-sm" value="Ali" />
+                    </div>
+                    <div class="col-md-6">
+                        <label class="small fw-bold mb-1">Last Name</label>
+                        <input type="text" class="form-control border-dark shadow-sm" value="Raza" />
                     </div>
 
                     <div class="col-md-6">
@@ -227,7 +231,7 @@ include("../nav.php");
                         <input type="tel" class="form-control border-dark shadow-sm" value="+92 300 9988776" />
                     </div>
 
-                    <div class="col-12 mb-3">
+                    <div class="col-md-6 mb-3">
                         <label class="small fw-bold mb-1">Driver Mate Photograph</label>
                         <input type="file" class="form-control border-dark shadow-sm" accept="image/*" />
                         <div class="form-text small">Upload a professional passport-sized photo.</div>

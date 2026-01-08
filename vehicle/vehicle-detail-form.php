@@ -40,6 +40,14 @@ include("../nav.php");
                         <div>VH-789</div>
                     </div>
                     <div class="d-flex detail-row">
+                        <div class="detail-label">Vehicle Manager Name:</div>
+                        <div>John Doe</div>
+                    </div>
+                    <div class="d-flex detail-row">
+                        <div class="detail-label">Vehicle Manager Email:</div>
+                        <div>john.doe@example.com</div>
+                    </div>
+                    <div class="d-flex detail-row">
                         <div class="detail-label">Make/Model:</div>
                         <div>Volkswagen Voyage</div>
                     </div>
@@ -47,6 +55,7 @@ include("../nav.php");
                         <div class="detail-label">Registration:</div>
                         <div>KA-01-AB-1234</div>
                     </div>
+                    
                     <div class="d-flex detail-row">
                         <div class="detail-label">Vehicle Type:</div>
                         <div>Truck</div>

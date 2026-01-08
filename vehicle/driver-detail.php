@@ -166,8 +166,13 @@ include("../nav.php");
         <form class="row g-3 px-2">
 
           <div class="col-md-6">
-            <label class="small fw-bold mb-1">Full Name</label>
-            <input type="text" class="form-control border-dark shadow-sm" value="John Doe" />
+            <label class="small fw-bold mb-1">First Name</label>
+            <input type="text" class="form-control border-dark shadow-sm" value="John " />
+          </div>
+
+          <div class="col-md-6">
+            <label class="small fw-bold mb-1">Last Name</label>
+            <input type="text" class="form-control border-dark shadow-sm" value="Doe" />
           </div>
 
           <div class="col-md-6">
@@ -225,7 +230,7 @@ include("../nav.php");
             <input type="tel" class="form-control border-dark shadow-sm" value="+92 321 7654321" />
           </div>
 
-          <div class="col-12 mb-2">
+          <div class="col-md-6 mb-2">
             <label class="small fw-bold mb-1">Driver Photograph</label>
             <input type="file" class="form-control border-dark shadow-sm" accept="image/*" />
           </div>

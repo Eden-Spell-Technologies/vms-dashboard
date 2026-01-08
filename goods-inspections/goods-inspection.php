@@ -14,7 +14,7 @@ include("../nav.php");
         <div id="goods-inspection-view" class="fade-in">
             <div class="d-md-flex justify-content-between align-items-center mb-4">
                 <div class="d-flex align-items-center">
-                    <a class="btn secondary-hover rounded-circle me-3" href="./vehicle-mngt.php"
+                    <a class="btn secondary-hover rounded-circle me-3" href="../index.php" title="Back"
                         style="width: 40px; height: 40px; display: flex; align-items: center; justify-content: center;">
                         <i class="fas fa-arrow-left"></i>
                     </a>
@@ -36,7 +36,7 @@ include("../nav.php");
                         </div>
                         <div>
                             <h4 class="fw-bold m-0">124</h4>
-                            <small class="">Total Inspections</small>
+                            <small class="">Inspections</small>
                         </div>
                     </div>
                 </div>

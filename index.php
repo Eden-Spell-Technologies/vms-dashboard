@@ -53,8 +53,25 @@ include("sidebar.php");
                   >
                     <i class="fas fa-tools"></i>
                   </div>
-                  <h5 class="fw-bold">Incident & Int.</h5>
+                  <h5 class="fw-bold">Incident & Intervention</h5>
                   <p class="small text-white">Repairs & reports</p>
+                </a>
+                  
+                </div>
+              </div>
+              <div class="col-xl-4 col-md-6">
+                <div
+                  class="action-card"
+                  
+                >
+                <a href="./goods-inspections/goods-inspection.php" style="text-decoration: none; color: inherit ">
+                  <div
+                    class="icon-box bg-blue-light mx-auto mb-3"
+                  >
+                    <i class="fas fa-clipboard-check "></i>
+                  </div>
+                   <h5 class="fw-bold">On Board Goods Inspection</h5>
+                   <p class="small text-white">Verification of cargo and inventory logs</p>
                 </a>
                   
                 </div>
@@ -66,7 +83,7 @@ include("sidebar.php");
                   >
                     <i class="fas fa-location-dot"></i>
                   </div>
-                  <h5 class="fw-bold">Tracking</h5>
+                  <h5 class="fw-bold">Vehicle Tracking</h5>
                   <p class="small text-white">Real-time GPS status</p>
                 </div>
               </div>
@@ -75,7 +92,7 @@ include("sidebar.php");
                   <div class="icon-box bg-info-subtle text-info mx-auto mb-3">
                     <i class="fas fa-boxes-stacked"></i>
                   </div>
-                  <h5 class="fw-bold">Asset Enum.</h5>
+                  <h5 class="fw-bold">Asset Enumeration</h5>
                   <p class="small text-white">Stock & inventory</p>
                 </div>
               </div>

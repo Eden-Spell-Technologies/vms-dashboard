@@ -25,6 +25,11 @@ define('CURRENT_PAGE', basename($_SERVER['PHP_SELF']));
         <i class="fas fa-exclamation-circle me-2"></i> Incident & Intervention
     </a>
 
+     <a href="<?= BASE_URL ?>goods-inspections/goods-inspection.php"
+       class="nav-link <?= (CURRENT_PAGE == 'goods-inspection.php') ? 'active' : '' ?>">
+        <i class="fas fa-clipboard-check me-2"></i> On Board Goods Inspection
+    </a>
+
     <a href="#" class="nav-link">
         <i class="fas fa-satellite me-2"></i> Vehicle Tracking
     </a>
@@ -33,7 +38,8 @@ define('CURRENT_PAGE', basename($_SERVER['PHP_SELF']));
         <i class="fas fa-list-check me-2"></i> Asset Enumeration
     </a>
 
-    <a href="#" class="nav-link">
+    <a href="<?= BASE_URL ?>report-analytics/report-analytics.php"
+       class="nav-link <?= (CURRENT_PAGE == 'report-analytics.php') ? 'active' : '' ?>">
         <i class="fas fa-file-lines me-2"></i> Reports & Analytics
     </a>
 
