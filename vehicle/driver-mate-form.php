@@ -10,16 +10,20 @@ if (!isset($_SESSION['user'])) {
 ?>
 
 <?php
-include("../nav.php");
+  include("../header_meta.php");
+  ?>
 
-?>
 <div id="dashboard-page">
 
+  <?php
+  include("../sidebar.php");
+  ?>
+  <div id="main-wrapper">
     <?php
-    include("../sidebar.php");
+    include("../nav.php");
+
     ?>
-    <div id="main-wrapper" class="p-4 p-md-5">
-        <div id="driver-mate-detail-view" class=" fade-in">
+        <div id="driver-mate-detail-view" class=" px-4 px-md-5 py-4">
             <div class="d-flex align-items-center mb-4">
                 <a class="btn secondary-hover rounded-circle me-3" href="./driver-mate-detail.php" style="
                     width: 40px;

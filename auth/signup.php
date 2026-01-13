@@ -1,10 +1,14 @@
+<?php
+  include("../header_meta.php");
+  ?>
+
 <!-- sign up form -->
-<div id="signup-view" class="login-container hidden fade-in">
+<div id="signup-view" class="login-container  fade-in">
     <div class="login-card shadow-lg animate__animated animate__fadeInUp" style="max-width: 500px">
         <div class="login-header text-center">
             <div class="login-logo">
                 <div class="logo-circle shadow-sm">
-                    <img src="./img/logo.png" class="logo-img" alt="Logo" />
+                    <img src="../img/logo.png" class="logo-img" alt="Logo" />
                 </div>
             </div>
             <h2 class="fw-bold m-0">CHAMPS VMA</h2>
@@ -78,7 +82,7 @@
                 <div class="text-center mt-4">
                     <p class="small text-muted mb-0">
                         Already have an account?
-                        <a href="#" class="fw-bold text-decoration-none" onclick="showLogin()"
+                        <a href="./login.php" class="fw-bold text-decoration-none"
                             style="color: var(--primary)">Log In</a>
                     </p>
                 </div>
@@ -86,3 +90,5 @@
         </div>
     </div>
 </div>
+</body>
+</html>

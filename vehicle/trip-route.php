@@ -7,20 +7,22 @@ if (!isset($_SESSION['user'])) {
 ?>
 
 <?php
-include("../nav.php");
+  include("../header_meta.php");
+  ?>
 
-?>
 <div id="dashboard-page">
 
+  <?php
+  include("../sidebar.php");
+  ?>
+  <div id="main-wrapper">
     <?php
-    include("../sidebar.php");
+    include("../nav.php");
+
     ?>
 
-
-    <div id="main-wrapper" class="p-4 p-md-5">
-
         <!-- route and destination -->
-        <div id="route-mgmt-view" class="fade-in">
+        <div id="route-mgmt-view" class="px-4 px-md-5 py-4">
             <div id="route-table-view">
                 <div class="d-md-flex justify-content-between align-items-center mb-4">
                     <div class="d-flex align-items-center">
@@ -39,11 +41,11 @@ include("../nav.php");
 
                     <button class="btn secondary-color rounded-pill px-4 mt-md-0 mt-3" data-bs-toggle="modal"
                         data-bs-target="#newRouteModal">
-                        + Create New Route
+                        + Create New Trip
                     </button>
                 </div>
 
-                <div class="row g-3 mb-4">
+                <div class="row g-3 mb-3">
                     <div class="col-md-3">
                         <div class="stat-card shadow-sm">
                             <div class="icon-box bg-info text-white">
@@ -90,76 +92,75 @@ include("../nav.php");
                     </div>
                 </div>
 
-                <div class="bg-white rounded-4 p-4 shadow-sm">
-                    <div class="d-flex justify-content-between align-items-center mb-3">
-                        <h5 class="fw-bold m-0">Recent Destination Log</h5>
-                        <button class="btn btn-sm secondary-hover">
-                            <i class="fas fa-download me-1"></i> Export Log
-                        </button>
-                    </div>
-                    <div class="table-responsive">
-                        <table class="table table-hover align-middle">
+                <div class="bg-white rounded-4 p-2 shadow-sm border">
+                    <div class="table-responsive p-2">
+                        <table id="destinationLogTable" class="table table-hover align-middle w-100 scrollable-tbody">
                             <thead class="table-light">
                                 <tr>
-                                    <th>Trip ID</th>
-                                    <th>Company</th>
-                                    <th>Vehicle</th>
-                                    <th>Driver</th>
-                                    <th>Origin</th>
+                                    <th>Route</th>
+                                    <th>Driver Name</th>
                                     <th>Destination</th>
-                                    <th>Goods</th>
-                                    <th>Load/Content</th>
-                                    <th>Departure</th>
                                     <th>Weather</th>
-                                    <th>Road</th>
-                                    <th>Status</th>
-                                    <th>Arrival Time</th>
-                                    <th>Notes</th>
-                                    <th>Action</th>
+                                    <th>Road</th>        
+                                    <th class="text-center">Action</th>
                                 </tr>
                             </thead>
                             <tbody id="trip-table-body">
                                 <tr>
-                                    <td>#TRP-1080</td>
-                                    <td>ABC Logistics</td>
-                                    <td>VH-789</td>
+                                    <td class="">Main Highway</td>
                                     <td>Zaid Ali</td>
-                                    <td>Karachi</td>
+                                    
                                     <td>Lahore</td>
-                                    <td>Electronics</td>
-                                    <td>500 kg</td>
-                                    <td>06:00 AM</td>
-                                    <td>Sunny</td>
+                                    <td><i class="fas fa-sun text-warning me-1"></i> Sunny</td>
                                     <td>Smooth</td>
-                                    <td><span class="badge bg-success">Arrived</span></td>
-                                    <td>21 Dec, 10:30 PM</td>
-                                    <td>No issues</td>
-                                    <td>
-                                        <a class="btn btn-sm btn-light border" href="./trip-route-form.php">
-                                            <i class="fas fa-eye"></i>
+                                    <td class="text-center">
+                                        <a class="btn btn-sm btn-light border shadow-sm" href="./trip-route-form.php">
+                                            <i class="fas fa-eye text-primary"></i>
                                         </a>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>#TRP-1081</td>
-                                    <td>XYZ Transport</td>
-                                    <td>VH-112</td>
-                                    <td>John Doe</td>
-                                    <td>Islamabad</td>
+                                    <td class="">GT Road</td>
+                                    <td>Ali Raza</td>
+                                    
                                     <td>Peshawar</td>
-                                    <td>Furniture</td>
-                                    <td>2 Tons</td>
-                                    <td>09:00 AM</td>
-                                    <td>Rainy</td>
+                                    <td><i class="fas fa-cloud-showers-heavy text-info me-1"></i> Rainy</td>
                                     <td>Rough</td>
-                                    <td>
-                                        <span class="badge bg-warning text-dark">Delayed</span>
+                                   
+                                   
+                                    <td class="text-center">
+                                        <a class="btn btn-sm btn-light border shadow-sm" href="./trip-route-form.php">
+                                            <i class="fas fa-eye text-primary"></i>
+                                        </a>
                                     </td>
-                                    <td>--</td>
-                                    <td>Traffic on motorway</td>
-                                    <td>
-                                        <a class="btn btn-sm btn-light border" href="./trip-route-form.php">
-                                            <i class="fas fa-eye"></i>
+                                </tr>
+                                 <tr>
+                                    <td class="">GT Road</td>
+                                    <td>Ali Raza</td>
+                                    
+                                    <td>Peshawar</td>
+                                    <td><i class="fas fa-cloud-showers-heavy text-info me-1"></i> Rainy</td>
+                                    <td>Rough</td>
+                                   
+                                   
+                                    <td class="text-center">
+                                        <a class="btn btn-sm btn-light border shadow-sm" href="./trip-route-form.php">
+                                            <i class="fas fa-eye text-primary"></i>
+                                        </a>
+                                    </td>
+                                </tr>
+                                 <tr>
+                                    <td class="">GT Road</td>
+                                    <td>Ali Raza</td>
+                                    
+                                    <td>Peshawar</td>
+                                    <td><i class="fas fa-cloud-showers-heavy text-info me-1"></i> Rainy</td>
+                                    <td>Rough</td>
+                                   
+                                   
+                                    <td class="text-center">
+                                        <a class="btn btn-sm btn-light border shadow-sm" href="./trip-route-form.php">
+                                            <i class="fas fa-eye text-primary"></i>
                                         </a>
                                     </td>
                                 </tr>
@@ -208,40 +209,14 @@ include("../nav.php");
                             <input type="text" class="form-control border-dark shadow-sm" value="Zaid Ali" />
                         </div>
 
-                        <div class="col-md-6">
-                            <label class="small fw-bold mb-1">Driver Number</label>
-                            <input type="tel" class="form-control border-dark shadow-sm" value="+92 300 1112233" />
-                        </div>
+
 
                         <div class="col-md-6">
-                            <label class="small fw-bold mb-1">Driver License</label>
-                            <input type="text" class="form-control border-dark shadow-sm" value="DL-XYZ-786" />
-                        </div>
-
-                        <div class="col-md-6">
-                            <label class="small fw-bold mb-1">Driver Photograph</label>
-                            <input type="file" class="form-control border-dark shadow-sm" />
-                        </div>
-
-                        <div class="col-md-6">
-                            <label class="small fw-bold mb-1">Motor Mate Name</label>
+                            <label class="small fw-bold mb-1">Driver Mate Name</label>
                             <input type="text" class="form-control border-dark shadow-sm" value="Aslam Khan" />
                         </div>
 
-                        <div class="col-md-6">
-                            <label class="small fw-bold mb-1">Motor Mate Phone Number</label>
-                            <input type="tel" class="form-control border-dark shadow-sm" value="+92 321 4455667" />
-                        </div>
 
-                        <div class="col-md-6">
-                            <label class="small fw-bold mb-1">Motor Mate License</label>
-                            <input type="text" class="form-control border-dark shadow-sm" value="ML-ABC-123" />
-                        </div>
-
-                        <div class="col-md-6">
-                            <label class="small fw-bold mb-1">Motor Mate Photograph</label>
-                            <input type="file" class="form-control border-dark shadow-sm" />
-                        </div>
 
                         <div class="col-md-6">
                             <label class="small fw-bold mb-1">Vehicle Registration Number</label>
@@ -291,7 +266,14 @@ include("../nav.php");
 
                         <div class="col-md-6">
                             <label class="small fw-bold mb-1">Waybill No</label>
-                            <input type="text" class="form-control border-dark shadow-sm" value="WB-12345678" />
+                            <select id="waybillSelect" class="form-select border-dark shadow-sm">
+                                <option value="">Select or Search Waybill...</option>
+                                <option value="WB-12345678" selected>WB-12345678</option>
+                                <option value="WB-12345679">WB-12345679</option>
+                                <option value="WB-12345680">WB-12345680</option>
+                                <option value="WB-12345681">WB-12345681</option>
+                                <option value="WB-12345682">WB-12345682</option>
+                            </select>
                         </div>
 
                         <div class="col-md-6">

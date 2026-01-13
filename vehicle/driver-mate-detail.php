@@ -6,26 +6,27 @@ if (!isset($_SESSION['user'])) {
 }
 
 ?>
-
 <?php
-include("../nav.php");
+  include("../header_meta.php");
+  ?>
 
-?>
 <div id="dashboard-page">
 
+  <?php
+  include("../sidebar.php");
+  ?>
+  <div id="main-wrapper">
     <?php
-    include("../sidebar.php");
+    include("../nav.php");
+
     ?>
 
-
-    <div id="main-wrapper" class="p-4 p-md-5">
-
         <!-- driver mate detail -->
-        <div id="driver-mate-view" class="fade-in">
+        <div id="driver-mate-view" class=" px-4 px-md-5 py-4">
             <div id="driver-mate-table-view">
                 <div class="d-md-flex justify-content-between align-items-center mb-4">
                     <div class="d-flex align-items-center">
-                        <a class="btn secondary-hover rounded-circle me-3" href="./driver-detail.php" style="
+                        <a class="btn secondary-hover rounded-circle me-3" href="./vehicle-mngt.php" style="
                     width: 40px;
                     height: 40px;
                     display: flex;
@@ -48,7 +49,7 @@ include("../nav.php");
 
                 </div>
 
-                <div class="row g-3 mb-4">
+                <div class="row g-3 mb-3">
                     <div class="col-md-3">
                         <div class="stat-card shadow-sm">
                             <div class="icon-box bg-success text-white">
@@ -98,45 +99,64 @@ include("../nav.php");
                     </div>
                 </div>
 
-                <div class="bg-white rounded-4 p-4 shadow-sm border mt-3">
-                    <h5 class="fw-bold mb-3">Motor Mate: Recent Trips & Performance</h5>
-                    <div class="table-responsive">
-                        <table class="table table-hover align-middle">
+                <div class="bg-white rounded-4 p-2 shadow-sm border">
+                    <div class="table-responsive p-2 ">
+                        <table id="driverTable" class="table table-hover align-middle scrollable-tbody" style="width:100%">
                             <thead class="table-light">
                                 <tr>
-                                    <th>Date</th>
-                                    <th>Trip ID</th>
-                                    <th>Assigned Driver</th>
-                                    <th>Vehicle</th>
-                                    <th>Route</th>
-                                    <th>Status</th>
-                                    <th>Action</th>
+                                    <th>Full Name</th>
+                                    <th>National ID</th>
+                                    <th>Emergency Contact Name</th>
+                                    <th>Vehicle / Plate Number</th>
+                                    <th class="text-center">Action</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>2025-12-20</td>
-                                    <td>#TRP-502</td>
-                                    <td>John Doe</td>
-                                    <td>VH-789</td>
-                                    <td>Karachi → Hyderabad</td>
-                                    <td><span class="badge bg-success">Completed</span></td>
-                                    <td>
-                                        <a href="./driver-mate-form.php" class="btn btn-sm btn-light border">
-                                            <i class="fas fa-eye"></i>
+                                    <td class="fw-bold text-primary">John Doe</td>
+                                    <td>42101-9876543-1</td>
+                                    <td>Jane Doe</td>
+                                    <td>VH-789 (ABC-123)</td>
+                                    <td class="text-center">
+                                        <a href="./driver-mate-form.php"
+                                            class="btn btn-sm btn-light border shadow-sm">
+                                            <i class="fas fa-eye text-primary"></i>
                                         </a>
                                     </td>
                                 </tr>
-                                <tr>
-                                    <td>2025-12-18</td>
-                                    <td>#TRP-488</td>
-                                    <td>John Doe</td>
-                                    <td>VH-789</td>
-                                    <td>Karachi → Sukkur</td>
-                                    <td><span class="badge bg-success">Completed</span></td>
-                                    <td>
-                                        <a href="./driver-mate-form.php" class="btn btn-sm btn-light border">
-                                            <i class="fas fa-eye"></i>
+                                 <tr>
+                                    <td class="fw-bold text-primary">John Doe</td>
+                                    <td>42101-9876543-1</td>
+                                    <td>Jane Doe</td>
+                                    <td>VH-789 (ABC-123)</td>
+                                    <td class="text-center">
+                                        <a href="./driver-mate-form.php"
+                                            class="btn btn-sm btn-light border shadow-sm">
+                                            <i class="fas fa-eye text-primary"></i>
+                                        </a>
+                                    </td>
+                                </tr>
+                                 <tr>
+                                    <td class="fw-bold text-primary">John Doe</td>
+                                    <td>42101-9876543-1</td>
+                                    <td>Jane Doe</td>
+                                    <td>VH-789 (ABC-123)</td>
+                                    <td class="text-center">
+                                        <a href="./driver-mate-form.php"
+                                            class="btn btn-sm btn-light border shadow-sm">
+                                            <i class="fas fa-eye text-primary"></i>
+                                        </a>
+                                    </td>
+                                </tr>
+                                 <tr>
+                                    <td class="fw-bold text-primary">John Doe</td>
+                                    <td>42101-9876543-1</td>
+                                    <td>Jane Doe</td>
+                                    <td>VH-789 (ABC-123)</td>
+                                    <td class="text-center">
+                                        <a href="./driver-mate-form.php"
+                                            class="btn btn-sm btn-light border shadow-sm">
+                                            <i class="fas fa-eye text-primary"></i>
                                         </a>
                                     </td>
                                 </tr>
@@ -148,6 +168,8 @@ include("../nav.php");
 
 
         </div>
+
+        <?php include("../footer.php"); ?>
     </div>
 </div>
 
@@ -208,8 +230,21 @@ include("../nav.php");
 
                     <div class="col-md-6">
                         <label class="small fw-bold mb-1">License Category / Class</label>
-                        <input type="text" class="form-control border-dark shadow-sm" value="LTV / Helper" />
+                        <select class="form-select border-dark shadow-sm">
+                            <option selected disabled>Select License Class...</option>
+
+                            <option value="ltv">LTV (Light Transport Vehicle)</option>
+                            <option value="htv">HTV (Heavy Transport Vehicle)</option>
+                            <option value="psv">PSV (Public Service Vehicle)</option>
+                            <option value="motorcycle_car">Motorcycle / Car</option>
+
+                            <option value="heavy_machinery">Heavy Machinery Operator License</option>
+                            <option value="tractor_commercial">Tractor (Commercial)</option>
+
+                            <option value="ltv_htv">LTV / HTV Combined</option>
+                        </select>
                     </div>
+
 
                     <div class="col-md-6">
                         <label class="small fw-bold mb-1">License Expiry Date</label>
@@ -218,7 +253,20 @@ include("../nav.php");
 
                     <div class="col-md-6">
                         <label class="small fw-bold mb-1">Assigned Vehicle / Plate Number</label>
-                        <input type="text" class="form-control border-dark shadow-sm" value="VH-789 (ABC-123)" />
+                        <select class="form-select border-dark shadow-sm">
+                            <option selected disabled>Choose Vehicle / Plate No...</option>
+
+                            <option value="vh789">VH-789 (ABC-123) - Toyota Corolla</option>
+                            <option value="vh456">VH-456 (XYZ-789) - Volkswagen Voyage</option>
+
+                            <option value="tr102">TR-102 (KHI-4567) - Hino Truck</option>
+                            <option value="tr305">TR-305 (LHR-8899) - Isuzu HGV</option>
+
+                            <option value="eq55">EQ-55 (No Plate) - CAT Excavator</option>
+                            <option value="eq12">EQ-12 (P-990) - JCB Forklift</option>
+
+                            <option value="gn01">GN-01 (Static) - Cummins Generator</option>
+                        </select>
                     </div>
 
                     <div class="col-md-6">
@@ -247,5 +295,3 @@ include("../nav.php");
         </div>
     </div>
 </div>
-
-<?php include("../footer.php"); ?>

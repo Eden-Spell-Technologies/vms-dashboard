@@ -5,20 +5,24 @@ if (!isset($_SESSION['user'])) {
     exit();
 }
 ?>
-<?php
-include("../nav.php");
 
-?>
+<?php
+  include("../header_meta.php");
+  ?>
+
 <div id="dashboard-page">
 
+  <?php
+  include("../sidebar.php");
+  ?>
+  <div id="main-wrapper">
     <?php
-    include("../sidebar.php");
+    include("../nav.php");
+
     ?>
 
-    <div id="main-wrapper" class="p-4 p-md-5">
-
         <!-- impoundment -->
-        <div id="impoundment-detail-view" class="fade-in">
+        <div id="impoundment-detail-view" class="px-4 px-md-5 py-4">
             <div id="impound-table-view">
                 <div class="d-md-flex justify-content-between align-items-center mb-4">
                     <div class="d-flex align-items-center">
@@ -39,7 +43,7 @@ include("../nav.php");
                     </button>
                 </div>
 
-                <div class="row g-3 mb-4">
+                <div class="row g-3 mb-3">
                     <div class="col-md-4">
                         <div class="stat-card shadow-sm border-0">
                             <div class="icon-box bg-danger-subtle text-danger">
@@ -75,56 +79,84 @@ include("../nav.php");
                     </div>
                 </div>
 
-                <div class="bg-white rounded-4 p-4 shadow-sm border">
-                    <div class="d-flex justify-content-between align-items-center mb-4">
-                        <h5 class="fw-bold m-0 text-navy">
-                            Submitted Impoundment Records
-                        </h5>
-                        <div class="d-flex gap-2">
-                            <input type="text" class="form-control form-control-sm border-2"
-                                placeholder="Search Vehicle ID..." style="width: 200px" />
-                            <button class="btn btn-sm secondary-hover">
-                                <i class="fas fa-filter"></i>
-                            </button>
-                        </div>
-                    </div>
-
-                    <div class="table-responsive">
-                        <table class="table table-hover align-middle">
+                <div class="bg-white rounded-4 p-2 shadow-sm border ">
+                    <div class="table-responsive p-2">
+                        <table id="impoundmentTable" class="table table-hover align-middle w-100 scrollable-tbody">
                             <thead class="table-light text-secondary small text-uppercase">
                                 <tr>
-                                    <th class="ps-3">Vehicle & Driver</th>
-                                    <th>Company</th>
-                                    <th>Authority</th>
+                                    <th class="ps-3">Reference No</th>
+                                    <th>Driver Name</th>
                                     <th>Reason</th>
-                                    <th>Date & Time</th>
-                                    <th>Status</th>
+                                     <th>Authority</th>
                                     <th class="text-center">Action</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
                                     <td class="ps-3">
-                                        <div class="d-flex align-items-center">
-                                            <div class="rounded-circle bg-danger-subtle p-2 me-3 text-danger">
-                                                <i class="fas fa-truck"></i>
-                                            </div>
-                                            <div>
-                                                <div class="fw-bold">VH-789</div>
-                                                <small class="text-muted">Muhammad Ahmed</small>
-                                            </div>
-                                        </div>
+                                       REF-108245
                                     </td>
-                                    <td><small class="fw-bold">ABC Logistics</small></td>
-                                    <td><small>Traffic Police</small></td>
+                                    <td>Muhammad Ahmed</td>
+                                    
                                     <td>
-                                        <span class="badge bg-light text-dark border">Obstruction</span>
+                                        <span class="badge bg-light text-dark border fw-normal">Obstruction</span>
                                     </td>
-                                    <td><small>22 Dec 2025, 11:30 AM</small></td>
-                                    <td><span class="badge bg-danger">Impounded</span></td>
+                                    <td>Traffic Police</td>
+                                   
+                                    <td class="text-center">
+                                        <a class="btn btn-sm btn-light border shadow-sm" href="./impoundment-form.php">
+                                            <i class="fas fa-eye text-primary"></i>
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="ps-3">
+                                       REF-108245
+                                    </td>
+                                    <td>Muhammad Ahmed</td>
+                                    
                                     <td>
-                                        <a class="btn btn-sm btn-light border" href="./impoundment-form.php">
-                                            <i class="fas fa-eye"></i>
+                                        <span class="badge bg-light text-dark border fw-normal">Obstruction</span>
+                                    </td>
+                                    <td>Traffic Police</td>
+                                   
+                                    <td class="text-center">
+                                        <a class="btn btn-sm btn-light border shadow-sm" href="./impoundment-form.php">
+                                            <i class="fas fa-eye text-primary"></i>
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="ps-3">
+                                       REF-108245
+                                    </td>
+                                    <td>Muhammad Ahmed</td>
+                                    
+                                    <td>
+                                        <span class="badge bg-light text-dark border fw-normal">Obstruction</span>
+                                    </td>
+                                    <td>Traffic Police</td>
+                                   
+                                    <td class="text-center">
+                                        <a class="btn btn-sm btn-light border shadow-sm" href="./impoundment-form.php">
+                                            <i class="fas fa-eye text-primary"></i>
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="ps-3">
+                                       REF-108245
+                                    </td>
+                                    <td>Muhammad Ahmed</td>
+                                    
+                                    <td>
+                                        <span class="badge bg-light text-dark border fw-normal">Obstruction</span>
+                                    </td>
+                                    <td>Traffic Police</td>
+                                   
+                                    <td class="text-center">
+                                        <a class="btn btn-sm btn-light border shadow-sm" href="./impoundment-form.php">
+                                            <i class="fas fa-eye text-primary"></i>
                                         </a>
                                     </td>
                                 </tr>
@@ -134,6 +166,8 @@ include("../nav.php");
                 </div>
             </div>
         </div>
+
+    <?php include("../footer.php"); ?>
     </div>
 </div>
 
@@ -212,4 +246,3 @@ include("../nav.php");
     </div>
 </div>
 
-<?php include("../footer.php"); ?>

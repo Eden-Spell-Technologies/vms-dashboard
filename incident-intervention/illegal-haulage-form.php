@@ -7,17 +7,22 @@ if (!isset($_SESSION['user'])) {
     exit();
 }
 ?>
-<?php
-include("../nav.php");
 
-?>
+<?php
+  include("../header_meta.php");
+  ?>
+
 <div id="dashboard-page">
 
     <?php
     include("../sidebar.php");
     ?>
-    <div id="main-wrapper" class="p-4 p-md-5">
-        <div id="driver-misconduct">
+    <div id="main-wrapper">
+        <?php
+        include("../nav.php");
+
+        ?>
+        <div id="driver-misconduct" class="px-4 px-md-5 py-4">
             <div class="d-flex align-items-center mb-4">
                 <a class="btn secondary-hover rounded-circle me-3" href="./illegal-haulage.php" style="
                     width: 40px;
@@ -32,42 +37,53 @@ include("../nav.php");
                 <h3 class="fw-bold mb-0">Illegal Haulage</h3>
             </div>
             <div class="bg-white p-4 rounded-4 shadow-sm border mb-4">
-                <div class="container-fluid bg-white p-0">
-                    <div class="d-flex detail-row">
-                        <div class="detail-label">Date:</div>
-                        <div>22 Dec 2025 | 11:30 AM</div>
-                    </div>
+                <div class="row">
+                    <div class="col-xl-7">
+                        <div class="container-fluid bg-white p-0">
+                            <div class="d-flex detail-row">
+                                <div class="detail-label">Date:</div>
+                                <div>22 Dec 2025 | 11:30 AM</div>
+                            </div>
 
-                    <div class="d-flex detail-row">
-                        <div class="detail-label">Vehicle Plate Number:</div>
-                        <div>VH-789</div>
-                    </div>
+                            <div class="d-flex detail-row">
+                                <div class="detail-label">Vehicle Plate Number:</div>
+                                <div>VH-789</div>
+                            </div>
 
-                    <div class="d-flex detail-row">
-                        <div class="detail-label">Driver Name:</div>
-                        <div>Muhammad Ahmed</div>
-                    </div>
+                            <div class="d-flex detail-row">
+                                <div class="detail-label">Driver Name:</div>
+                                <div>Muhammad Ahmed</div>
+                            </div>
 
-                    <div class="d-flex detail-row">
-                        <div class="detail-label">Location:</div>
-                        <div>Check Post Alpha - Route 4</div>
-                    </div>
+                            <div class="d-flex detail-row">
+                                <div class="detail-label">Location:</div>
+                                <div>Check Post Alpha - Route 4</div>
+                            </div>
 
-                    <div class="d-flex detail-row">
-                        <div class="detail-label">Unauthorized Cargo Description:</div>
-                        <div class="">Unlisted Commercial Electronics</div>
-                    </div>
+                            <div class="d-flex detail-row">
+                                <div class="detail-label">Unauthorized Cargo Description:</div>
+                                <div class="">Unlisted Commercial Electronics</div>
+                            </div>
 
-                    <div class="d-flex detail-row">
-                        <div class="detail-label">Discovered By:</div>
-                        <div>Officer Zeeshan / Team B</div>
-                    </div>
+                            <div class="d-flex detail-row">
+                                <div class="detail-label">Discovered By:</div>
+                                <div>Officer Zeeshan / Team B</div>
+                            </div>
 
-                    <div class="d-flex detail-row border-bottom-0">
-                        <div class="detail-label">Remarks / Comments:</div>
-                        <div class="fst-italic text-muted">
-                            Confirmed - Unauthorized cargo detected during routine inspection. Vehicle impounded for
-                            further verification.
+                            <div class="d-flex detail-row border-bottom-0">
+                                <div class="detail-label">Remarks / Comments:</div>
+                                <div class="fst-italic text-muted">
+                                    Confirmed - Unauthorized cargo detected during routine inspection. Vehicle impounded
+                                    for
+                                    further verification.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-5">
+                        <div class="text-center p-2 ">
+                            <img src="../img/illegal-haulage.jfif" alt="Truck Image" class="img-fluid"
+                                style="max-height: 200px; object-fit: contain;">
                         </div>
                     </div>
                 </div>

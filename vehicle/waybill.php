@@ -6,21 +6,24 @@ if (!isset($_SESSION['user'])) {
 }
 
 ?>
-<?php
-include("../nav.php");
 
-?>
+<?php
+  include("../header_meta.php");
+  ?>
+
 <div id="dashboard-page">
 
   <?php
   include("../sidebar.php");
   ?>
+  <div id="main-wrapper">
+    <?php
+    include("../nav.php");
 
-
-  <div id="main-wrapper" class="p-4 p-md-5">
+    ?>
 
     <!-- waybill detail -->
-    <div id="waybill-details-view" class="fade-in">
+    <div id="waybill-details-view" class="px-4 px-md-5 py-4">
       <div id="waybill-table-view">
         <div class="d-md-flex justify-content-between align-items-center mb-4">
           <div class="d-flex align-items-center">
@@ -45,7 +48,7 @@ include("../nav.php");
           </div>
         </div>
 
-        <div class="row g-3 mb-4">
+        <div class="row g-3 mb-3">
           <div class="col-md-3">
             <div class="stat-card shadow-sm">
               <div class="icon-box bg-primary text-white">
@@ -92,44 +95,73 @@ include("../nav.php");
           </div>
         </div>
 
-        <div class="bg-white rounded-4 p-4 shadow-sm">
-          <h5 class="fw-bold mb-3">Recent Waybill Logs</h5>
-          <div class="table-responsive">
-            <table class="table table-hover align-middle">
+        <div class="bg-white rounded-4 p-2 shadow-sm border">
+          <div class="table-responsive p-2">
+            <table id="waybillTable" class="table table-hover align-middle w-100 scrollable-tbody">
               <thead class="table-light">
                 <tr>
                   <th>WB ID</th>
-                  <th>Date</th>
+                  <th>Driver Name</th>
                   <th>Destination</th>
-                  <th>Client</th>
-                  <th>Payment</th>
-                  <th>Action</th>
+                  <th>Quantity</th>
+                  <th>Description of Good</th>
+                  <th class="text-center">Action</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td>#WB-5520</td>
-                  <td>2025-12-20</td>
+                  <td class="">#WB-5520</td>
+                  <td>Ahmed Khan</td>
                   <td>Lahore</td>
-                  <td>Global Logis.</td>
-                  <td><span class="badge bg-success">Paid</span></td>
+                  <td>45 Units</td>
                   <td>
-                    <a class="btn btn-sm btn-light border" href="./waybill-form.php">
-                      <i class="fas fa-eye"></i>
+                    Solar Panels
+                  </td>
+                  <td class="text-center">
+                    <a class="btn btn-sm btn-light border shadow-sm" href="./waybill-form.php">
+                      <i class="fas fa-eye text-primary"></i>
                     </a>
                   </td>
                 </tr>
                 <tr>
-                  <td>#WB-5521</td>
-                  <td>2025-12-21</td>
-                  <td>Multan</td>
-                  <td>Kashif Ent.</td>
+                  <td class="">#WB-1020</td>
+                  <td>Ayan khan</td>
+                  <td>Lahore</td>
+                  <td>22 Units</td>
                   <td>
-                    <span class="badge bg-warning text-dark">Pending</span>
+                    Electronics
                   </td>
+                  <td class="text-center">
+                    <a class="btn btn-sm btn-light border shadow-sm" href="./waybill-form.php">
+                      <i class="fas fa-eye text-primary"></i>
+                    </a>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="">#WB-1020</td>
+                  <td>Ayan khan</td>
+                  <td>Lahore</td>
+                  <td>22 Units</td>
                   <td>
-                    <a class="btn btn-sm btn-light border" href="./waybill-form.php">
-                      <i class="fas fa-eye"></i>
+                    Electronics
+                  </td>
+                  <td class="text-center">
+                    <a class="btn btn-sm btn-light border shadow-sm" href="./waybill-form.php">
+                      <i class="fas fa-eye text-primary"></i>
+                    </a>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="">#WB-1020</td>
+                  <td>Ayan khan</td>
+                  <td>Lahore</td>
+                  <td>22 Units</td>
+                  <td>
+                    Electronics
+                  </td>
+                  <td class="text-center">
+                    <a class="btn btn-sm btn-light border shadow-sm" href="./waybill-form.php">
+                      <i class="fas fa-eye text-primary"></i>
                     </a>
                   </td>
                 </tr>
@@ -142,6 +174,8 @@ include("../nav.php");
 
 
     </div>
+
+  <?php include("../footer.php"); ?>
   </div>
 </div>
 
@@ -250,4 +284,3 @@ include("../nav.php");
   </div>
 </div>
 
-<?php include("../footer.php"); ?>

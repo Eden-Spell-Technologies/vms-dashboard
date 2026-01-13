@@ -5,20 +5,24 @@ if (!isset($_SESSION['user'])) {
     exit();
 }
 ?>
-<?php
-include("../nav.php");
 
-?>
+<?php
+  include("../header_meta.php");
+  ?>
+
 <div id="dashboard-page">
 
+  <?php
+  include("../sidebar.php");
+  ?>
+  <div id="main-wrapper">
     <?php
-    include("../sidebar.php");
+    include("../nav.php");
+
     ?>
 
-    <div id="main-wrapper" class="p-4 p-md-5">
-
         <!-- breakdown -->
-        <div id="breakdown-detail-view" class="fade-in">
+        <div id="breakdown-detail-view" class="px-4 px-md-5 py-4">
             <div id="breakdown-table">
                 <div class="d-md-flex justify-content-between align-items-center mb-4">
                     <div class="d-flex align-items-start">
@@ -46,7 +50,7 @@ include("../nav.php");
                     </button>
                 </div>
 
-                <div class="row g-3 mb-4">
+                <div class="row g-3 mb-2">
                     <div class="col-md-4">
                         <div class="stat-card shadow-sm">
                             <div class="icon-box bg-primary-subtle text-primary">
@@ -82,82 +86,137 @@ include("../nav.php");
                     </div>
                 </div>
 
-                <div class="bg-white rounded-4 p-4 shadow-sm border">
-                    <h5 class="fw-bold mb-3 text-navy">Recent Breakdown Logs</h5>
-                    <div class="table-responsive">
-                        <table class="table table-hover align-middle">
-                            <thead class="table-light text-muted small uppercase">
+                <div class="bg-white rounded-4 p-2 shadow-sm border">
+                    <div class="table-responsive p-2">
+                        <table id="breakdownTable" class="table table-hover align-middle w-100 scrollable-tbody">
+                            <thead class="table-light text-muted small text-uppercase">
                                 <tr>
                                     <th>Vehicle ID</th>
-                                    <th>Issue Type</th>
+                                    <th>Driver Name</th>
                                     <th>Location</th>
-                                    <th>Severity</th>
-                                    <th>Reported At</th>
-                                    <th>Status</th>
-                                    <th class="text-center">Evidence</th>
-                                    <th>Action</th>
+                                    <th>Breakdown Type</th>            
+                                    <th class="text-center">Action</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
                                     <td>
-                                        <strong>VH-789</strong><br /><small class="text-muted">Toyota Hilux</small>
+                                        VH-789
                                     </td>
                                     <td>
-                                        <span class="text-truncate d-inline-block" style="max-width: 150px">Axle defect,
-                                            Injector defect</span>
+                                       Ali Raza
                                     </td>
                                     <td>
-                                        <small><i class="fas fa-map-marker-alt text-danger me-1"></i>
-                                            M-2 Motorway, Mile 45</small>
+                                        <small><i class="fas fa-map-marker-alt text-danger me-1"></i> M-2 Motorway, Mile
+                                            45</small>
                                     </td>
                                     <td>
-                                        <span class="badge rounded-pill bg-danger">Critical</span>
+                                        Gas Cut
                                     </td>
-                                    <td>23 Dec, 10:30 AM</td>
-                                    <td>
-                                        <span class="badge bg-warning text-dark"><i
-                                                class="fas fa-clock me-1"></i>Awaiting
-                                            Tow</span>
-                                    </td>
+                                   
+                                    
                                     <td class="text-center">
-                                        <i class="fas fa-image text-primary" title="View Photo"
-                                            style="cursor: pointer"></i>
-                                    </td>
-                                    <td>
-                                        <a class="btn btn-sm btn-light border" href="./vehicle-breakdown-form.php">
-                                            <i class="fas fa-eye"></i>
+                                        <a class="btn btn-sm btn-light border shadow-sm"
+                                            href="./vehicle-breakdown-form.php">
+                                            <i class="fas fa-eye text-primary"></i>
                                         </a>
                                     </td>
                                 </tr>
 
-                                <tr>
+                               <tr>
                                     <td>
-                                        <strong>VH-112</strong><br /><small class="text-muted">Suzuki Carry</small>
-                                    </td>
-                                    <td>Gear selector defect</td>
-                                    <td>
-                                        <small><i class="fas fa-map-marker-alt text-danger me-1"></i>
-                                            Saddar, Karachi</small>
+                                        VH-899
                                     </td>
                                     <td>
-                                        <span class="badge rounded-pill bg-info text-white">Minor</span>
+                                       John Deo
                                     </td>
-                                    <td>23 Dec, 08:15 AM</td>
                                     <td>
-                                        <span class="badge bg-success text-white"><i
-                                                class="fas fa-check me-1"></i>Fixed</span>
+                                        <small><i class="fas fa-map-marker-alt text-danger me-1"></i> M-2 Motorway, Mile
+                                            45</small>
                                     </td>
+                                    <td>
+                                        Clutch defect
+                                    </td>
+                                   
+                                    
                                     <td class="text-center">
-                                        <i class="fas fa-image text-primary" title="View Photo"
-                                            style="cursor: pointer"></i>
-                                    </td>
-                                    <td>
-                                        <a class="btn btn-sm btn-light border" href="./vehicle-breakdown-form.php">
-                                            <i class="fas fa-eye"></i>
+                                        <a class="btn btn-sm btn-light border shadow-sm"
+                                            href="./vehicle-breakdown-form.php">
+                                            <i class="fas fa-eye text-primary"></i>
                                         </a>
                                     </td>
                                 </tr>
+
+                                 <tr>
+                                    <td>
+                                        VH-899
+                                    </td>
+                                    <td>
+                                       John Deo
+                                    </td>
+                                    <td>
+                                        <small><i class="fas fa-map-marker-alt text-danger me-1"></i> M-2 Motorway, Mile
+                                            45</small>
+                                    </td>
+                                    <td>
+                                        Clutch defect
+                                    </td>
+                                   
+                                    
+                                    <td class="text-center">
+                                        <a class="btn btn-sm btn-light border shadow-sm"
+                                            href="./vehicle-breakdown-form.php">
+                                            <i class="fas fa-eye text-primary"></i>
+                                        </a>
+                                    </td>
+                                </tr>
+                                 <tr>
+                                    <td>
+                                        VH-899
+                                    </td>
+                                    <td>
+                                       John Deo
+                                    </td>
+                                    <td>
+                                        <small><i class="fas fa-map-marker-alt text-danger me-1"></i> M-2 Motorway, Mile
+                                            45</small>
+                                    </td>
+                                    <td>
+                                        Clutch defect
+                                    </td>
+                                   
+                                    
+                                    <td class="text-center">
+                                        <a class="btn btn-sm btn-light border shadow-sm"
+                                            href="./vehicle-breakdown-form.php">
+                                            <i class="fas fa-eye text-primary"></i>
+                                        </a>
+                                    </td>
+                                </tr>
+                                 <tr>
+                                    <td>
+                                        VH-899
+                                    </td>
+                                    <td>
+                                       John Deo
+                                    </td>
+                                    <td>
+                                        <small><i class="fas fa-map-marker-alt text-danger me-1"></i> M-2 Motorway, Mile
+                                            45</small>
+                                    </td>
+                                    <td>
+                                        Clutch defect
+                                    </td>
+                                   
+                                    
+                                    <td class="text-center">
+                                        <a class="btn btn-sm btn-light border shadow-sm"
+                                            href="./vehicle-breakdown-form.php">
+                                            <i class="fas fa-eye text-primary"></i>
+                                        </a>
+                                    </td>
+                                </tr>
+                               
                             </tbody>
                         </table>
                     </div>
@@ -168,6 +227,8 @@ include("../nav.php");
 
 
         </div>
+
+        <?php include("../footer.php"); ?>
     </div>
 </div>
 
@@ -239,4 +300,3 @@ include("../nav.php");
     </div>
 </div>
 
-<?php include("../footer.php"); ?>

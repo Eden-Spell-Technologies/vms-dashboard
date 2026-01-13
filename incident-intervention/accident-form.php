@@ -7,17 +7,22 @@ if (!isset($_SESSION['user'])) {
     exit();
 }
 ?>
-<?php
-include("../nav.php");
 
-?>
+<?php
+  include("../header_meta.php");
+  ?>
+
 <div id="dashboard-page">
 
+  <?php
+  include("../sidebar.php");
+  ?>
+  <div id="main-wrapper">
     <?php
-    include("../sidebar.php");
+    include("../nav.php");
+
     ?>
-    <div id="main-wrapper" class="p-4 p-md-5">
-        <div id="accident" class="">
+        <div id="accident" class="px-4 px-md-5 py-4">
             <div class="d-flex align-items-center mb-4">
                 <a class="btn secondary-hover rounded-circle me-3" href="./accident.php" style="
                     width: 40px;
@@ -32,68 +37,79 @@ include("../nav.php");
                 <h3 class="fw-bold mb-0">Accident Report</h3>
             </div>
             <div class="bg-white p-4 rounded-4 shadow-sm border mb-4">
+                <div class="row">
+                    <div class="col-xl-7">
+                        <div class="container-fluid">
+                            <div class="d-flex detail-row">
+                                <div class="detail-label">Vehicle Plate Number:</div>
+                                <div class="">VH-789</div>
+                            </div>
+                            <div class="d-flex detail-row">
+                                <div class="detail-label">Driver Name:</div>
+                                <div>Muhammad Bilal (DRV-042)</div>
+                            </div>
+                            <div class="d-flex detail-row">
+                                <div class="detail-label">Location:</div>
+                                <div>Near Sahiwal Bypass, N-5 Highway</div>
+                            </div>
 
-                <div class="container-fluid bg-white p-0">
-                    <div class="d-flex detail-row">
-                        <div class="detail-label">Vehicle Plate Number:</div>
-                        <div class="">VH-789</div>
-                    </div>
-                    <div class="d-flex detail-row">
-                        <div class="detail-label">Driver Name:</div>
-                        <div>Muhammad Bilal (DRV-042)</div>
-                    </div>
-                    <div class="d-flex detail-row">
-                        <div class="detail-label">Location:</div>
-                        <div>Near Sahiwal Bypass, N-5 Highway</div>
-                    </div>
+                            <div class="d-flex detail-row bg-light py-2">
+                                <div class="detail-label fw-bold">Nature of Accident:</div>
+                                <div class="">Loaded</div>
+                            </div>
 
-                    <div class="d-flex detail-row bg-light py-2">
-                        <div class="detail-label fw-bold">Nature of Accident:</div>
-                        <div class="">Loaded</div>
-                    </div>
+                            <div class="ps-4 border-start border-3 ms-2">
+                                <div class="d-flex detail-row">
+                                    <div class="detail-label">Status of Driver & Motor Mate:</div>
+                                    <div class="r">Injured (Moderate)</div>
+                                </div>
 
-                    <div class="ps-4 border-start border-3 ms-2">
-                        <div class="d-flex detail-row">
-                            <div class="detail-label">Status of Driver & Motor Mate:</div>
-                            <div class="r">Injured (Moderate)</div>
-                        </div>
+                                <div class="d-flex detail-row">
+                                    <div class="detail-label">Content (Goods Type):</div>
+                                    <div>FMCG / Pharmaceuticals</div>
+                                </div>
 
-                        <div class="d-flex detail-row">
-                            <div class="detail-label">Content (Goods Type):</div>
-                            <div>FMCG / Pharmaceuticals</div>
-                        </div>
+                                <div class="d-flex detail-row">
+                                    <div class="detail-label ">Damage Extend:</div>
+                                    <div>
+                                        Product Severe Damage / Product Collapse
+                                        <small class="d-block ">- Impacted by third party</small>
+                                    </div>
+                                </div>
 
-                        <div class="d-flex detail-row">
-                            <div class="detail-label ">Damage Extend:</div>
-                            <div>
-                                Product Severe Damage / Product Collapse
-                                <small class="d-block ">- Impacted by third party</small>
+                                <div class="d-flex detail-row">
+                                    <div class="detail-label">Fatality Status:</div>
+                                    <div>No</div>
+                                </div>
+
+                                <div class="d-flex detail-row">
+                                    <div class="detail-label">Nature of Accident Type:</div>
+                                    <div>Hit by a third party</div>
+                                </div>
+                            </div>
+
+                            <div class="d-flex detail-row">
+                                <div class="detail-label">Damage / Injury (Yes/No):</div>
+                                <div class="fw-bold">Yes</div>
+                            </div>
+
+                            <div class="d-flex detail-row border-bottom-0">
+                                <div class="detail-label">Action / Comments:</div>
+                                <div class="fst-italic">
+                                    Police FIR registered (#FIR-990). Insurance claim in process. Vehicle towed to
+                                    workshop.
+                                </div>
                             </div>
                         </div>
-
-                        <div class="d-flex detail-row">
-                            <div class="detail-label">Fatality Status:</div>
-                            <div>No</div>
-                        </div>
-
-                        <div class="d-flex detail-row">
-                            <div class="detail-label">Nature of Accident Type:</div>
-                            <div>Hit by a third party</div>
-                        </div>
                     </div>
-
-                    <div class="d-flex detail-row">
-                        <div class="detail-label">Damage / Injury (Yes/No):</div>
-                        <div class="fw-bold">Yes</div>
-                    </div>
-
-                    <div class="d-flex detail-row border-bottom-0">
-                        <div class="detail-label">Action / Comments:</div>
-                        <div class="fst-italic">
-                            Police FIR registered (#FIR-990). Insurance claim in process. Vehicle towed to workshop.
-                        </div>
+                     <div class="col-xl-5">
+                        <div class="text-center p-2 ">
+                                <img src="../img/accident.jfif"
+                                    alt="Truck Image" class="img-fluid" style="max-height: 200px; object-fit: contain;">
+                            </div>
                     </div>
                 </div>
+
             </div>
         </div>
 

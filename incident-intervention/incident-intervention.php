@@ -9,20 +9,25 @@ if (!isset($_SESSION['user'])) {
 
 // Ek folder peeche (root par) jaane ke liye ../ use karein
 ?>
-<?php
-include("../nav.php");
 
-?>
+<?php
+  include("../header_meta.php");
+  ?>
+
 <div id="dashboard-page">
 
+  <?php
+  include("../sidebar.php");
+  ?>
+  <div id="main-wrapper">
     <?php
-    include("../sidebar.php");
+    include("../nav.php");
+
     ?>
-    <div id="main-wrapper" class="p-4 p-md-5">
 
         <!-- incident and intervention -->
-        <div id="incident-mgmt-view" class="fade-in">
-            <div class="d-flex justify-content-between align-items-center mb-5">
+        <div id="incident-mgmt-view" class="px-4 px-md-5 py-4">
+            <!-- <div class="d-flex justify-content-between align-items-center mb-5">
                 <div>
                     <h3 class="fw-bold">Incident & Intervention</h3>
                     <p class="text-muted">
@@ -32,10 +37,10 @@ include("../nav.php");
                 <a class="btn secondary-color rounded-pill px-4" href="../index.php" title="Back">
                     <i class="fas fa-arrow-left"></i> Back
                 </a>
-            </div>
+            </div> -->
 
             <div class="row g-4">
-                <div class="col-md-4 col-lg-4">
+                <div class="col-md-6 col-xl-3">
                     <a class="vms-service-card text-decoration-none" href="./impoundment.php">
                         <div class="icon-wrapper bg-blue-light">
                             <i class="fas fa-gavel fa-lg"></i>
@@ -45,7 +50,7 @@ include("../nav.php");
                     </a>
                 </div>
 
-                <div class="col-md-4 col-lg-4">
+                <div class="col-md-6 col-xl-3">
                     <a class="vms-service-card text-decoration-none" href="./vehicle-breakdown.php">
                         <div class="icon-wrapper bg-orange-light">
                             <i class="fas fa-car-crash fa-lg"></i>
@@ -55,7 +60,7 @@ include("../nav.php");
                     </a>
                 </div>
 
-                <div class="col-md-4 col-lg-4">
+                <div class="col-md-6 col-xl-3">
                     <a class="vms-service-card text-decoration-none" href="./illegal-detention.php">
                         <div class="icon-wrapper bg-yellow-light">
                             <i class="fas fa-handcuffs fa-lg"></i>
@@ -65,7 +70,7 @@ include("../nav.php");
                     </a>
                 </div>
 
-                <div class="col-md-4 col-lg-4">
+                <div class="col-md-6 col-xl-3">
                     <a class="vms-service-card text-decoration-none" href="./accident.php">
                         <div class="icon-wrapper bg-red-light" style="background-color: #fef2f2; color: #dc2626">
                             <i class="fas fa-ambulance fa-lg"></i>
@@ -75,7 +80,7 @@ include("../nav.php");
                     </a>
                 </div>
 
-                <div class="col-md-4 col-lg-4">
+                <div class="col-md-6 col-xl-3">
                     <a class="vms-service-card text-decoration-none" href="./vehicle-bugged-down.php">
                         <div class="icon-wrapper bg-green-light">
                             <i class="fas fa-truck-pickup fa-lg"></i>
@@ -85,7 +90,7 @@ include("../nav.php");
                     </a>
                 </div>
 
-                <div class="col-md-4 col-lg-4">
+                <div class="col-md-6 col-xl-3">
                     <a class="vms-service-card text-decoration-none" href="./route-diversion.php">
                         <div class="icon-wrapper bg-blue-light">
                             <i class="fas fa-route fa-lg"></i>
@@ -95,7 +100,7 @@ include("../nav.php");
                     </a>
                 </div>
 
-                <div class="col-md-4 col-lg-4">
+                <div class="col-md-6 col-xl-3">
                     <a class="vms-service-card text-decoration-none" href="./driver-misconduct.php">
                         <div class="icon-wrapper bg-orange-light">
                             <i class="fas fa-user-slash fa-lg"></i>
@@ -105,7 +110,7 @@ include("../nav.php");
                     </a>
                 </div>
 
-                <div class="col-md-4 col-lg-4">
+                <div class="col-md-6 col-xl-3">
                     <a class="vms-service-card text-decoration-none" href="./illegal-haulage.php">
                         <div class="icon-wrapper bg-yellow-light">
                             <i class="fas fa-boxes fa-lg "></i>

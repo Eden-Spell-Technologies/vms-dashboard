@@ -7,17 +7,22 @@ if (!isset($_SESSION['user'])) {
     exit();
 }
 ?>
-<?php
-include("../nav.php");
 
-?>
+<?php
+  include("../header_meta.php");
+  ?>
+
 <div id="dashboard-page">
 
+  <?php
+  include("../sidebar.php");
+  ?>
+  <div id="main-wrapper">
     <?php
-    include("../sidebar.php");
+    include("../nav.php");
+
     ?>
-    <div id="main-wrapper" class="p-4 p-md-5">
-        <div id="impound-detail-view" class="fade-in">
+        <div id="impound-detail-view" class="px-4 px-md-5 py-4">
             <div class="d-flex align-items-center mb-4">
                 <a class="btn secondary-hover rounded-circle me-3" href="./illegal-detention.php" style="
                     width: 40px;
@@ -34,7 +39,7 @@ include("../nav.php");
 
             <div class="bg-white p-4 rounded-4 shadow-sm border mb-4">
                 <div class="row">
-                    <div class="col-md-12">
+                    <div class="col-xl-7">
                         <div class="container-fluid p-0">
                             <div class="d-flex detail-row">
                                 <div class="detail-label">Reference Number:</div>
@@ -79,6 +84,12 @@ include("../nav.php");
                                 </div>
                             </div>
                         </div>
+                    </div>
+                     <div class="col-xl-5">
+                        <div class="text-center p-2 ">
+                                <img src="../img/illegal-detention.jpg"
+                                    alt="Truck Image" class="img-fluid" style="max-height: 200px; object-fit: contain;">
+                            </div>
                     </div>
                 </div>
             </div>

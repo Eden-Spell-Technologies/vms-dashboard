@@ -1,10 +1,14 @@
+<?php
+  include("../header_meta.php");
+  ?>
+
 <!-- forgot password -->
-<div id="forgot-password-view" class="login-container hidden fade-in">
+<div id="forgot-password-view" class="login-container fade-in">
     <div class="login-card shadow-lg animate__animated animate__fadeInUp">
         <div class="login-header text-center">
             <div class="login-logo">
                 <div class="logo-circle shadow-sm">
-                    <img src="./img/logo.png" class="logo-img" alt="Logo" />
+                    <img src="../img/logo.png" class="logo-img" alt="Logo" />
                 </div>
             </div>
             <h2 class="fw-bold m-0">CHAMPS VMA</h2>
@@ -32,7 +36,7 @@
                 </button>
 
                 <div class="text-center mt-4">
-                    <a href="#" class="fw-bold text-decoration-none small" onclick="showLogin()"
+                    <a href="./login.php" class="fw-bold text-decoration-none small" 
                         style="color: var(--primary)">
                         <i class="fas fa-arrow-left me-1"></i> Back to Login
                     </a>
@@ -41,3 +45,5 @@
         </div>
     </div>
 </div>
+</body>
+</html>

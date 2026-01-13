@@ -4,14 +4,23 @@ if (!isset($_SESSION['user'])) {
     header("Location: ../auth/login.php");
     exit();
 }
-include("../nav.php");
 ?>
 
-<div id="dashboard-page">
-    <?php include("../sidebar.php"); ?>
+<?php
+  include("../header_meta.php");
+  ?>
 
-    <div id="main-wrapper" class="p-4 p-md-5">
-        <div id="goods-inspection-view" class="fade-in">
+<div id="dashboard-page">
+
+    <?php
+    include("../sidebar.php");
+    ?>
+    <div id="main-wrapper">
+        <?php
+        include("../nav.php");
+
+        ?>
+        <div id="goods-inspection-view" class="px-4 px-md-5 py-4">
             <div class="d-md-flex justify-content-between align-items-center mb-4">
                 <div class="d-flex align-items-center">
                     <a class="btn secondary-hover rounded-circle me-3" href="../index.php" title="Back"
@@ -23,13 +32,13 @@ include("../nav.php");
                 <div>
                     <button class="btn secondary-color rounded-pill px-4" data-bs-toggle="modal"
                         data-bs-target="#addInspectionModal">
-                        + New Inspection
+                        + Add New Inspection
                     </button>
                 </div>
             </div>
 
-            <div class="row g-3 mb-4">
-                <div class="col-md-3">
+            <div class="row g-3 mb-3">
+                <div class="col-md-6 col-xl-3">
                     <div class="stat-card shadow-sm">
                         <div class="icon-box bg-primary text-white">
                             <i class="fas fa-clipboard-list"></i>
@@ -41,7 +50,7 @@ include("../nav.php");
                     </div>
                 </div>
 
-                <div class="col-md-3">
+                <div class="col-md-6 col-xl-3">
                     <div class="stat-card shadow-sm">
                         <div class="icon-box bg-success text-white">
                             <i class="fas fa-check-circle"></i>
@@ -53,7 +62,7 @@ include("../nav.php");
                     </div>
                 </div>
 
-                <div class="col-md-3">
+                <div class="col-md-6 col-xl-3">
                     <div class="stat-card shadow-sm">
                         <div class="icon-box bg-danger text-white">
                             <i class="fas fa-exclamation-triangle"></i>
@@ -65,7 +74,7 @@ include("../nav.php");
                     </div>
                 </div>
 
-                <div class="col-md-3">
+                <div class="col-md-6 col-xl-3">
                     <div class="stat-card shadow-sm">
                         <div class="icon-box bg-warning text-dark">
                             <i class="fas fa-truck-loading"></i>
@@ -80,56 +89,76 @@ include("../nav.php");
 
 
 
-            <div class="bg-white rounded-4 p-4 shadow-sm">
-                <h5 class="fw-bold mb-3">Recent Goods Inspections</h5>
-                <div class="table-responsive">
-                    <table class="table table-hover align-middle">
+            <div class="bg-white rounded-4 p-2 shadow-sm border">
+                <div class="table-responsive p-2">
+                    <table id="inspectionTable" class="table table-hover align-middle scrollable-tbody"
+                        style="width:100%">
                         <thead class="table-light">
                             <tr>
-                                <th>Date | Time</th>
                                 <th>Fleet No</th>
-                                <th>Waybill No</th>
                                 <th>Route</th>
                                 <th>Qty (D/O)</th>
-                                <th>Status</th>
+                                <th>Cargo Secured</th>
                                 <th>Inspection</th>
-                                <th>Action</th>
+                                <th class="text-center">Action</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td>
-                                    <div>2026-01-07</div>
-                                    <small class="text-muted">11:30 AM</small>
+                                <td>VH-789</td>
+                                <td>Karachi → Sukkur</td>
+                                <td>300 / 500</td>
+
+                                <td class="text-center">
+                                    Yes
                                 </td>
-                                <td class="fw-bold">VH-789</td>
-                                <td>#WBL-55410</td>
-                                <td class="small">Karachi → Sukkur</td>
-                                <td>
-                                    <span class="text-primary">500</span> / <span class="text-success">500</span>
-                                </td>
-                                <td><span class="badge bg-success">Cleared</span></td>
-                                <td><span class="badge bg-info text-dark">Pre-Departure</span></td>
-                                <td>
+                                <td>Cleared</td>
+                                <td class="text-center">
                                     <a href="./goods-inspection-form.php" class="btn btn-sm btn-light border">
                                         <i class="fas fa-eye"></i>
                                     </a>
                                 </td>
                             </tr>
                             <tr>
-                                <td>
-                                    <div>2026-01-06</div>
-                                    <small class="text-muted">09:15 AM</small>
+                                <td>VH-789</td>
+                                <td>Karachi → Sukkur</td>
+                                <td>300 / 500</td>
+
+                                <td class="text-center">
+                                    Yes
                                 </td>
-                                <td class="fw-bold">VH-112</td>
-                                <td>#WBL-55392</td>
-                                <td class="small">Lahore → Multan</td>
-                                <td>
-                                    <span class="text-primary">250</span> / <span class="text-danger">245</span>
+                                <td>Cleared</td>
+                                <td class="text-center">
+                                    <a href="./goods-inspection-form.php" class="btn btn-sm btn-light border">
+                                        <i class="fas fa-eye"></i>
+                                    </a>
                                 </td>
-                                <td><span class="badge bg-danger">Issues Found</span></td>
-                                <td><span class="badge bg-warning text-dark">En-Route</span></td>
-                                <td>
+                            </tr>
+                            <tr>
+                                <td>VH-789</td>
+                                <td>Karachi → Sukkur</td>
+                                <td>300 / 500</td>
+
+                                <td class="text-center">
+                                    Yes
+                                </td>
+                                <td>Cleared</td>
+                                <td class="text-center">
+                                    <a href="./goods-inspection-form.php" class="btn btn-sm btn-light border">
+                                        <i class="fas fa-eye"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>VH-789</td>
+                                <td>Karachi → Sukkur</td>
+                                <td>300 / 500</td>
+
+                                <td class="text-center">
+                                    Yes
+                                </td>
+                                <td>Cleared</td>
+                                <td class="text-center">
                                     <a href="./goods-inspection-form.php" class="btn btn-sm btn-light border">
                                         <i class="fas fa-eye"></i>
                                     </a>
@@ -140,6 +169,8 @@ include("../nav.php");
                 </div>
             </div>
         </div>
+
+        <?php include("../footer.php"); ?>
     </div>
 </div>
 
@@ -277,5 +308,3 @@ include("../nav.php");
         </div>
     </div>
 </div>
-
-<?php include("../footer.php"); ?>

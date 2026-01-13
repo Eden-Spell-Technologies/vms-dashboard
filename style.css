@@ -140,23 +140,12 @@ body {
   animation-duration: 0.3s;
 }
 
-/* --- Sidebar Style --- */
-#sidebar {
-  width: var(--sidebar-width);
-  height: 100vh;
-  position: fixed;
-  background: var(--primary);
-  color: white;
-  z-index: 1000;
-  transition: 0.3s;
-}
-
 .logo-area {
-  /* padding: 6px;
   border-bottom-width: 1px;
   border-bottom-style: solid;
-  border-color: var(--secondary); */
+  border-color: var(--secondary);
   gap: 10px; /* logo aur text ke beech space */
+  padding: 9px;
 }
 
 .logo-img {
@@ -170,13 +159,70 @@ body {
   letter-spacing: 1px;
 }
 
-.nav-menu {
-  padding: 20px 0;
+#dashboard-page {
+  width: 100%;
+  display: flex;
 }
+
+/* --- Sidebar Style --- */
+#sidebar {
+  width: var(--sidebar-width);
+  background: var(--primary);
+  /* Header ke neeche se screen ke aakhir tak height lock karein */
+  height: 100vh !important;
+  position: fixed;
+
+  z-index: 1050;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: none !important;
+}
+
+/* Nav Menu ko bachi hui sari height dein */
+.nav-menu {
+  overflow-y: auto !important; /* Scroll yahan enable hoga */
+  overflow-x: hidden;
+  padding-bottom: 20px;
+  padding-top: 30px;
+}
+
+/* Scrollbar Style */
+.nav-menu::-webkit-scrollbar {
+  width: 8px;
+ 
+}
+.nav-menu::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+
+}
+
+/* 3. Overlay Style */
+.sidebar-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+
+  z-index: 999;
+  display: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: auto; /* Jab tak 'show' na ho, clicks niche jane de */
+}
+
+.sidebar-overlay.show {
+  display: block;
+  opacity: 1;
+  pointer-events: auto; /* Jab show ho jaye tab clicks capture kare */
+}
+
 .nav-link {
   color: rgba(255, 255, 255, 0.7);
-  padding: 12px;
-  margin: 5px 10px;
+  padding: 12px 7px !important;
+  margin: 5px 5px !important;
   border-radius: 12px;
   display: flex;
   align-items: center;
@@ -194,13 +240,52 @@ body {
   font-size: 1.1rem;
 }
 
+.nav-link[aria-expanded="true"] .fa-chevron-down {
+  transform: rotate(180deg);
+  transition: 0.3s;
+}
+.nav-menu .nav-link {
+  transition: all 0.2s ease-in-out;
+}
+
 /* --- Main Content --- */
 #main-wrapper {
   margin-left: var(--sidebar-width);
   width: calc(100% - var(--sidebar-width));
-  min-height: 100vh; /* 👈 min height */
+
   display: flex; /* footer push ke liye */
   flex-direction: column;
+}
+
+/* Page load hone ke baad transition on hogi */
+body.ready #sidebar {
+  transition: all 0.3s ease !important;
+}
+body.ready #main-wrapper {
+  transition: all 0.3s ease !important;
+}
+
+.sidebar-hidden #sidebar {
+  transition: none !important;
+  margin-left: -260px; /* Aapki sidebar ki width ke mutabiq */
+}
+
+.sidebar-hidden #main-wrapper {
+  transition: none !important;
+  margin-left: 0 !important;
+  width: 100% !important;
+}
+
+@media (max-width: 991.98px) {
+  #sidebar {
+    z-index: 2000 !important; /* Navbar se upar rakhen */
+    transition: transform 0.3s ease !important; /* Mobile pe transition lazmi ho */
+  }
+  
+  /* Jab mobile pe active ho toh HTML margin zero rahe */
+  .sidebar-hidden #main-wrapper {
+    margin-left: 0 !important;
+  }
 }
 
 .top-navbar {
@@ -214,6 +299,71 @@ body {
   top: 0;
   z-index: 999;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
+}
+
+/* dashboard css */
+
+
+.tracking-tight { letter-spacing: -1px; }
+
+/* Metric Card Depth & Soft UI */
+.metric-card {
+    background: #ffffff;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    border: 1px solid rgba(226, 232, 240, 0.8) !important;
+}
+
+.metric-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.08) !important;
+}
+
+.icon-glow {
+    width: 65px;
+    height: 65px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 20px -5px rgba(67, 97, 238, 0.3);
+}
+
+.metric-shape {
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    right: -30px;
+    bottom: -30px;
+    border-radius: 50%;
+    opacity: 0.15;
+    transition: 0.4s;
+}
+
+.metric-card:hover .metric-shape {
+    transform: scale(1.5);
+    opacity: 0.25;
+}
+
+/* Custom Soft Badges */
+.bg-primary-subtle { background-color: #e0e7ff !important; color: #4361ee !important; }
+.bg-success-subtle { background-color: #dcfce7 !important; color: #10b981 !important; }
+.bg-danger-subtle { background-color: #fee2e2 !important; color: #ef4444 !important; }
+
+/* Shadow Hover */
+.shadow-hover {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.rounded-5 { border-radius: 2rem !important; }
+.x-small { font-size: 11px; }
+
+/* Dashboard Fade In Animation */
+.fade-in {
+    animation: fadeIn 1s ease-in-out;
+}
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.98); }
+    to { opacity: 1; transform: scale(1); }
 }
 
 /* --- Cards & Components --- */
@@ -416,6 +566,89 @@ body {
   }
 }
 
+/* --- Desktop & Tablet (Perfect Column Alignment) --- */
+@media (min-width: 768px) {
+    .scrollable-tbody {
+        display: flex;
+        flex-direction: column;
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    /* thead aur tr ko grid banayein takay columns sync rahein */
+    .scrollable-tbody thead tr,
+    .scrollable-tbody tbody tr {
+        display: grid;
+        /* Columns ki tadad ke hisaab se adjust karein (e.g., 5 columns) */
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); 
+        width: 100%;
+    }
+
+    .scrollable-tbody thead {
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        background-color: #f8f9fa;
+        display: block;
+    }
+
+    .scrollable-tbody tbody {
+        display: block;
+        max-height: 145px; /* Aapki required height */
+        overflow-y: auto !important;
+        width: 100%;
+    }
+
+    .scrollable-tbody th, 
+    .scrollable-tbody td {
+        padding: 12px;
+        text-align: left;
+        border-bottom: 1px solid #dee2e6;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+}
+
+/* --- Mobile (768px se niche) --- */
+@media (max-width: 767.98px) {
+    .scrollable-tbody {
+        display: table !important; /* Mobile par wapis normal table */
+        width: 100% !important;
+    }
+
+    .scrollable-tbody thead {
+        display: table-header-group !important;
+    }
+
+    .scrollable-tbody tbody {
+        display: table-row-group !important;
+        max-height: none !important;
+    }
+
+    .scrollable-tbody tr {
+        display: table-row !important;
+    }
+
+    .scrollable-tbody th, 
+    .scrollable-tbody td {
+        display: table-cell !important;
+        white-space: nowrap !important;
+        padding: 10px 15px !important;
+        min-width: 130px; /* Mobile scroll trigger karne ke liye */
+    }
+}
+
+/* --- Scrollbar Customization --- */
+.scrollable-tbody tbody::-webkit-scrollbar {
+    width: 5px;
+}
+.scrollable-tbody tbody::-webkit-scrollbar-thumb {
+    background: #cbd5e0;
+    border-radius: 10px;
+}
+
+
 .hidden {
   display: none;
 }
@@ -430,23 +663,37 @@ body {
   z-index: 100;
   padding: 10px 0;
   margin-top: auto;
+  display: none !important;
 }
 
 /* Sidebar default for desktop (992px+) */
 @media (min-width: 992px) {
-  #sidebar {
-    left: 0;
+  #sidebar.active {
+    transform: translateX(-100%); /* Smoothly slide out */
+    visibility: hidden;
   }
+
   #main-wrapper {
     margin-left: var(--sidebar-width);
     width: calc(100% - var(--sidebar-width));
+    transition: margin-left 0.4s cubic-bezier(0.4, 0, 0.2, 1), width 0.4s;
+  }
+  #sidebar.active + #main-wrapper {
+    margin-left: 0;
+    width: 100%;
   }
 }
 
 /* Sidebar for Mobile/Tablet (< 992px) */
 @media (max-width: 991.98px) {
   #sidebar {
-    left: calc(-1 * var(--sidebar-width)); /* Screen se bahar */
+    transform: translateX(-100%);
+    visibility: hidden;
+  }
+
+  #sidebar.active {
+    transform: translateX(0); /* Smoothly slide in */
+    visibility: visible;
   }
 
   #main-wrapper {
@@ -454,28 +701,32 @@ body {
     width: 100%;
   }
 
-  /* Jab sidebar open ho */
-  #sidebar.active {
-    left: 0;
-  }
-
-  /* Optional: Overlay jab sidebar khula ho */
-  .sidebar-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: rgba(0, 0, 0, 0.5);
-    z-index: 999;
-    display: none;
-  }
-
-  .sidebar-overlay.show {
-    display: block;
-  }
-
   .logo-area {
     padding: 9px;
   }
+}
+
+/* Avatar hover effect */
+.avatar-container {
+  transition: transform 0.2s ease;
+}
+
+.avatar-container:hover {
+  transform: scale(1.05);
+}
+
+/* Dropdown arrow ko hide karne ke liye (Optional) */
+.dropdown-toggle::after {
+  display: none;
+}
+
+/* Dropdown items hover effect */
+.dropdown-item {
+  transition: background 0.2s;
+  font-size: 0.9rem;
+}
+
+.dropdown-item:hover {
+  background-color: #f8f9fa;
+  color: var(--primary);
 }

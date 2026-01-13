@@ -5,21 +5,25 @@ if (!isset($_SESSION['user'])) {
     exit();
 }
 ?>
-<?php
-include("../nav.php");
 
-?>
+<?php
+  include("../header_meta.php");
+  ?>
+
 <div id="dashboard-page">
 
     <?php
     include("../sidebar.php");
     ?>
+    <div id="main-wrapper">
+        <?php
+        include("../nav.php");
 
-    <div id="main-wrapper" class="p-4 p-md-5">
+        ?>
 
 
         <!-- illegal -->
-        <div id="detention-detail-view" class="fade-in">
+        <div id="detention-detail-view" class="px-4 px-md-5 py-4">
             <div class="d-md-flex justify-content-between align-items-center mb-4">
                 <div class="d-flex align-items-center">
                     <a class="btn secondary-hover rounded-circle me-3" href="./incident-intervention.php" style="
@@ -40,8 +44,8 @@ include("../nav.php");
                 </button>
             </div>
 
-            <div class="row g-3 mb-4">
-                <div class="col-md-3">
+            <div class="row g-3 mb-3">
+                <div class="col-md-6 col-xl-3">
                     <div class="stat-card shadow-sm">
                         <div class="icon-box bg-danger text-white">
                             <i class="fas fa-lock"></i>
@@ -52,7 +56,7 @@ include("../nav.php");
                         </div>
                     </div>
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-6 col-xl-3">
                     <div class="stat-card shadow-sm">
                         <div class="icon-box bg-primary text-white">
                             <i class="fas fa-gavel"></i>
@@ -63,7 +67,7 @@ include("../nav.php");
                         </div>
                     </div>
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-6 col-xl-3">
                     <div class="stat-card shadow-sm">
                         <div class="icon-box bg-success text-white">
                             <i class="fas fa-user-check"></i>
@@ -74,7 +78,7 @@ include("../nav.php");
                         </div>
                     </div>
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-6 col-xl-3">
                     <div class="stat-card shadow-sm">
                         <div class="icon-box bg-warning text-dark">
                             <i class="fas fa-file-contract"></i>
@@ -89,42 +93,76 @@ include("../nav.php");
 
 
 
-            <div class="bg-white rounded-4 p-4 shadow-sm">
-                <h5 class="fw-bold mb-3">Detention Logs</h5>
-                <div class="table-responsive">
-                    <table class="table table-hover align-middle">
+            <div class="bg-white rounded-4 p-2 shadow-sm border">
+                <div class="table-responsive p-2">
+                    <table id="detentionTable" class="table table-hover align-middle w-100 scrollable-tbody">
                         <thead class="table-light">
                             <tr>
-                                <th>Case ID</th>
-                                <th>Vehicle</th>
-                                <th>Agency</th>
-                                <th>Status</th>
-                                <th>Resolution Date</th>
-                                <th>Action</th>
+                                <th>Reference No</th>
+                                <th>Driver Name</th>
+                                <th>Location</th>
+                                <th>Detaining Authority</th>
+                                <th class="text-center">Action</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td>#CASE-5590</td>
-                                <td>VH-112</td>
-                                <td>Traffic Police</td>
-                                <td><span class="badge bg-danger">Detained</span></td>
-                                <td>--</td>
+                                <td class="">REF-108245</td>
+                                <td>Muhammad Ahmed</td>
+                                <td>Central Depot</td>
                                 <td>
-                                    <a class="btn btn-sm btn-light border" href="./illegal-detention-form.php">
-                                        <i class="fas fa-eye"></i>
+                                    Traffic Police
+                                </td>
+
+                                <td class="text-center">
+                                    <a class="btn btn-sm btn-light border shadow-sm"
+                                        href="./illegal-detention-form.php">
+                                        <i class="fas fa-eye text-primary"></i>
                                     </a>
                                 </td>
                             </tr>
                             <tr>
-                                <td>#CASE-5582</td>
-                                <td>VH-456</td>
-                                <td>Customs</td>
-                                <td><span class="badge bg-success">Released</span></td>
-                                <td>15 Dec 2025</td>
+                                <td class="">REF-108245</td>
+                                <td>John Doe</td>
+                                <td>Central Depot</td>
                                 <td>
-                                    <a class="btn btn-sm btn-light border" href="./illegal-detention-form.php">
-                                        <i class="fas fa-eye"></i>
+                                    RTO
+                                </td>
+
+                                <td class="text-center">
+                                    <a class="btn btn-sm btn-light border shadow-sm"
+                                        href="./illegal-detention-form.php">
+                                        <i class="fas fa-eye text-primary"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="">REF-108245</td>
+                                <td>John Doe</td>
+                                <td>Central Depot</td>
+                                <td>
+                                    RTO
+                                </td>
+
+                                <td class="text-center">
+                                    <a class="btn btn-sm btn-light border shadow-sm"
+                                        href="./illegal-detention-form.php">
+                                        <i class="fas fa-eye text-primary"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="">REF-108245</td>
+                                <td>John Doe</td>
+                                <td>Central Depot</td>
+                                <td>
+                                    RTO
+                                </td>
+
+                                <td class="text-center">
+                                    <a class="btn btn-sm btn-light border shadow-sm"
+                                        href="./illegal-detention-form.php">
+                                        <i class="fas fa-eye text-primary"></i>
                                     </a>
                                 </td>
                             </tr>
@@ -133,6 +171,8 @@ include("../nav.php");
                 </div>
             </div>
         </div>
+
+        <?php include("../footer.php"); ?>
     </div>
 </div>
 
@@ -201,5 +241,3 @@ include("../nav.php");
         </div>
     </div>
 </div>
-
-<?php include("../footer.php"); ?>

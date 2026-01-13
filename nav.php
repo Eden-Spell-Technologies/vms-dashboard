@@ -1,27 +1,45 @@
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>VMS Pro - Enterprise Dashboard</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-    <link rel="stylesheet" href="style.css">
-
-    <link rel="stylesheet" href="../style.css">
-
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <header class="top-navbar">
         <div class="d-flex align-items-center">
-            <div class="logo-area d-flex align-items-center justify-content-center">
-                <img src="https://devedenspell.com/MD/image/logo.png" class="logo-img" alt="Logo" />
-                <span class="vms-brand">CHAMPS VMA</span>
-            </div>
+            <button class="btn btn-link" style="color: var(--secondary)" id="sidebarToggle">
+                <i class="fas fa-bars fa-lg" id="toggleIcon"></i>
+            </button>
         </div>
 
 
         <div class="d-flex align-items-center">
+            <div class="dropdown me-3">
+                <a href="#" class="d-flex align-items-center text-decoration-none dropdown-toggle" id="profileDropdown"
+                    data-bs-toggle="dropdown" aria-expanded="false">
+                    <div class="avatar-container">
+                        <img src="https://ui-avatars.com/api/?name=Admin&background=random" alt="User"
+                            class="rounded-circle border border-2 border-white shadow-sm"
+                            style="width: 40px; height: 40px; object-fit: cover;">
+                    </div>
+                </a>
+
+                <ul class="dropdown-menu dropdown-menu-end shadow border-0 mt-2" aria-labelledby="profileDropdown"
+                    style="min-width: 200px; border-radius: 12px;">
+                    <li class="px-3 py-2 border-bottom">
+                        <span class="d-block fw-bold small text-dark">John Doe</span>
+                        <span class="d-block text-muted small">admin@champs.com</span>
+                    </li>
+                    <li><a class="dropdown-item py-2" href="/vms-frontend/profile.php"><i class="fas fa-user-circle me-2 text-primary"></i> My
+                            Profile</a></li>
+
+                    <li>
+                        <a class="dropdown-item py-2 text-danger" href="/vms-frontend/auth/logout.php">
+                            <i class="fas fa-sign-out-alt me-2"></i> Logout
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+
+        </div>
+
+
+        <!-- <div class="d-flex align-items-center">
             <a href="/vms-frontend/auth/logout.php" class="text-decoration-none">
                 <button type="button" class="btn secondary-color btn-sm rounded-pill px-3">
                     <i class="fas fa-sign-out-alt me-1"></i> Logout
@@ -30,6 +48,6 @@
             <button class="btn btn-link d-lg-none me-2" style="color: var(--secondary)" id="sidebarToggle">
                 <i class="fas fa-bars fa-lg"></i>
             </button>
-        </div>
+        </div> -->
 
     </header>

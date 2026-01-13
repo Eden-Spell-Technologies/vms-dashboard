@@ -7,20 +7,22 @@ if (!isset($_SESSION['user'])) {
 ?>
 
 <?php
-include("../nav.php");
+  include("../header_meta.php");
+  ?>
 
-?>
 <div id="dashboard-page">
 
   <?php
   include("../sidebar.php");
   ?>
+  <div id="main-wrapper">
+    <?php
+    include("../nav.php");
 
-
-  <div id="main-wrapper" class="p-4 p-md-5">
+    ?>
 
     <!-- service & maintenance -->
-    <div id="service-history-view" class="fade-in">
+    <div id="service-history-view" class="px-4 px-md-5 py-4">
       <div id="service-table-view">
         <div class="d-md-flex justify-content-between align-items-center mb-4">
           <div class="d-flex align-items-center">
@@ -38,11 +40,11 @@ include("../nav.php");
 
           <button class="btn secondary-color rounded-pill px-4 mt-md-0 mt-3" data-bs-toggle="modal"
             data-bs-target="#addServiceModal">
-            + Log New Service
+            + Add New Service
           </button>
         </div>
 
-        <div class="row g-3 mb-4">
+        <div class="row g-3 mb-2">
           <div class="col-md-3">
             <div class="stat-card shadow-sm border-0">
               <div class="icon-box bg-danger text-white">
@@ -89,98 +91,89 @@ include("../nav.php");
           </div>
         </div>
 
-        <div class="bg-white rounded-4 p-4 shadow-sm border">
-          <div class="d-flex justify-content-between align-items-center mb-3">
-            <h5 class="fw-bold m-0">Historical Maintenance Log</h5>
-            <button class="btn btn-sm secondary-hover rounded-pill px-3">
-              <i class="fas fa-download me-1"></i> Export CSV
-            </button>
-          </div>
-
-          <div class="table-responsive">
-            <table class="table table-hover align-middle" style="min-width: 1000px">
+        <div class="bg-white rounded-4 p-2 shadow-sm border ">
+          <div class="table-responsive p-2">
+            <table id="maintenanceLogTable" class="table table-hover align-middle w-100 scrollable-tbody">
               <thead class="table-light">
                 <tr>
-                  <th class="border-0">Date</th>
-                  <th class="border-0">Provider</th>
-                  <th class="border-0">Contract</th>
-                  <th class="border-0">Service Type</th>
-                  <th class="border-0 text-center">Wear & Tear</th>
-                  <th class="border-0 text-center">Safety Status</th>
-                  <th class="border-0">Status</th>
-                  <th class="border-0">Actions</th>
+                  <th>Vehicle Plate Number</th>
+                  <th>Odometer Mileage</th>
+                  <th>Parts Replaced</th>
+                  <th>Service Type</th>
+
+                  <th>Accident History</th>
+                  <th class="text-center">Actions</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td>
-                    <div class="fw-bold text-dark">15 Dec 2025</div>
-                  </td>
-                  <td>
-                    <div class="fw-bold">AutoMaster Hub</div>
-                  </td>
-                  <td>
-                    <div class="text-primary">#CNT-99812</div>
-                  </td>
-                  <td>
-                    <span class="badge bg-primary-subtle text-primary border border-primary-subtle px-2">Major
-                      Service</span>
-                  </td>
-                  <td class="text-center">
-                    <div class="d-flex justify-content-center gap-1">
-                      <span class="dot bg-success" title="Tyres: OK"></span>
-                      <span class="dot bg-warning" title="Exhaust: Near Limit"></span>
-                      <span class="dot bg-success" title="Brakes: OK"></span>
-                    </div>
-                    <small class="text-muted" style="font-size: 10px">T / E / B</small>
-                  </td>
-                  <td class="text-center">
-                    <i class="fas fa-check-circle text-success" title="All Safety Systems Passed"></i>
-                    <small class="d-block text-muted" style="font-size: 10px">Passed</small>
-                  </td>
-                  <td>
-                    <span class="badge bg-success">Completed</span>
-                  </td>
+                  <td>VH-789 (ABC-123)</td>
+                  <td>85,250 km</td>
+                  <td>Oil Filter</td>
+                  <td>Repair</td>
 
                   <td>
-                    <a class="btn btn-sm btn-light border" href="./service-form.php">
-                      <i class="fas fa-eye"></i>
+                    Minor Bump</td>
+                  <td class="text-center">
+                    <a class="btn btn-sm btn-light border shadow-sm" href="./service-form.php">
+                      <i class="fas fa-eye text-primary"></i>
                     </a>
                   </td>
-
                 </tr>
 
-                <tr>
+               <tr>
+                  <td>VH-789 (ABC-123)</td>
+                  <td>85,250 km</td>
+                  <td>Oil Filter</td>
+                  <td>Repair</td>
+
                   <td>
-                    <div class="fw-bold text-dark">12 Oct 2025</div>
-                  </td>
-                  <td>
-                    <div class="fw-bold">Ali Khan (Mechanic)</div>
-                  </td>
-                  <td>
-                    <div class="text-muted">No Contract</div>
-                  </td>
-                  <td>
-                    <span class="badge bg-secondary-subtle text-secondary border border-secondary-subtle px-2">Minor
-                      Fix</span>
-                  </td>
+                    Minor Bump</td>
                   <td class="text-center">
-                    <div class="d-flex justify-content-center gap-1">
-                      <span class="dot bg-success"></span>
-                      <span class="dot bg-success"></span>
-                      <span class="dot bg-success"></span>
-                    </div>
+                    <a class="btn btn-sm btn-light border shadow-sm" href="./service-form.php">
+                      <i class="fas fa-eye text-primary"></i>
+                    </a>
                   </td>
+                </tr>
+                 <tr>
+                  <td>VH-789 (ABC-123)</td>
+                  <td>85,250 km</td>
+                  <td>Oil Filter</td>
+                  <td>Repair</td>
+
+                  <td>
+                    Minor Bump</td>
                   <td class="text-center">
-                    <i class="fas fa-exclamation-triangle text-warning" title="Lighting System Needs Attention"></i>
-                    <small class="d-block text-muted" style="font-size: 10px">Check Lighting</small>
+                    <a class="btn btn-sm btn-light border shadow-sm" href="./service-form.php">
+                      <i class="fas fa-eye text-primary"></i>
+                    </a>
                   </td>
+                </tr>
+                 <tr>
+                  <td>VH-789 (ABC-123)</td>
+                  <td>85,250 km</td>
+                  <td>Oil Filter</td>
+                  <td>Repair</td>
+
                   <td>
-                    <span class="badge bg-success">Completed</span>
+                    Minor Bump</td>
+                  <td class="text-center">
+                    <a class="btn btn-sm btn-light border shadow-sm" href="./service-form.php">
+                      <i class="fas fa-eye text-primary"></i>
+                    </a>
                   </td>
+                </tr>
+                 <tr>
+                  <td>VH-789 (ABC-123)</td>
+                  <td>85,250 km</td>
+                  <td>Oil Filter</td>
+                  <td>Repair</td>
+
                   <td>
-                    <a class="btn btn-sm btn-light border" href="./service-form.php">
-                      <i class="fas fa-eye"></i>
+                    Minor Bump</td>
+                  <td  class="text-center">
+                    <a class="btn btn-sm btn-light border shadow-sm" href="./service-form.php">
+                      <i class="fas fa-eye text-primary"></i>
                     </a>
                   </td>
                 </tr>
@@ -192,6 +185,8 @@ include("../nav.php");
 
 
     </div>
+
+    <?php include("../footer.php"); ?>
   </div>
 </div>
 
@@ -277,5 +272,3 @@ include("../nav.php");
     </div>
   </div>
 </div>
-
-<?php include("../footer.php"); ?>

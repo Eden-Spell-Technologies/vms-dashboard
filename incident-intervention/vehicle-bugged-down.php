@@ -5,20 +5,24 @@ if (!isset($_SESSION['user'])) {
   exit();
 }
 ?>
-<?php
-include("../nav.php");
 
-?>
+<?php
+  include("../header_meta.php");
+  ?>
+
 <div id="dashboard-page">
 
   <?php
   include("../sidebar.php");
   ?>
+  <div id="main-wrapper">
+    <?php
+    include("../nav.php");
 
-  <div id="main-wrapper" class="p-4 p-md-5">
+    ?>
 
     <!-- bugged-down -->
-    <div id="bugged-down-view" class="">
+    <div id="bugged-down-view" class="px-4 px-md-5 py-4">
       <div class="d-md-flex justify-content-between align-items-center mb-4">
         <div>
           <div class="d-flex align-items-start">
@@ -49,8 +53,8 @@ include("../nav.php");
         </div>
       </div>
 
-      <div class="row g-3 mb-4">
-        <div class="col-md-4">
+      <div class="row g-3 mb-2">
+        <div class="col-md-6 col-lg-4">
           <div class="stat-card shadow-sm p-3">
             <div class="d-flex align-items-center">
               <div class="icon-box bg-success-subtle text-success me-3">
@@ -63,7 +67,7 @@ include("../nav.php");
             </div>
           </div>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-6 col-lg-4">
           <div class="stat-card shadow-sm p-3">
             <div class="d-flex align-items-center">
               <div class="icon-box bg-secondary-subtle text-secondary me-3">
@@ -78,31 +82,91 @@ include("../nav.php");
         </div>
       </div>
 
-      
 
-      <div class="bg-white rounded-4 p-4 shadow-sm border">
-        <h5 class="fw-bold mb-3 text-navy">Recovery Logs</h5>
-        <div class="table-responsive">
-          <table class="table table-hover align-middle">
-            <thead class="table-light">
+
+      <div class="bg-white rounded-4 p-2 shadow-sm border">
+        <div class="table-responsive p-2">
+          <table id="recoveryTable" class="table table-hover align-middle w-100 scrollable-tbody">
+            <thead class="table-light text-secondary small text-uppercase">
               <tr>
-                <th>Date</th>
+               
                 <th>Vehicle</th>
+                <th>Driver Name</th>
                 <th>Cause</th>
                 <th>Location</th>
-                <th>Action</th>
+                <th class="text-center">Action</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td>22 Dec 2025</td>
-                <td>VH-552</td>
-                <td>Mud</td>
-                <td>Islamabad</td>
-
+               
+                <td><span class="badge bg-light text-dark border">VH-552</span></td>
+                 <td>
+                  <div >Aslam khan</div>
+                </td>
                 <td>
-                  <a class="btn btn-sm btn-light border" href="./vehicle-bugged-form.php">
-                    <i class="fas fa-eye"></i>
+                  Mud
+                </td>
+                <td>
+                  <small><i class="fas fa-map-marker-alt text-danger me-1"></i> Islamabad</small>
+                </td>
+                <td class="text-center">
+                  <a class="btn btn-sm btn-light border shadow-sm" href="./vehicle-bugged-form.php">
+                    <i class="fas fa-eye text-primary"></i>
+                  </a>
+                </td>
+              </tr>
+              <tr>
+               
+                <td><span class="badge bg-light text-dark border">VH-552</span></td>
+                 <td>
+                  <div >Aslam khan</div>
+                </td>
+                <td>
+                  Mud
+                </td>
+                <td>
+                  <small><i class="fas fa-map-marker-alt text-danger me-1"></i> Islamabad</small>
+                </td>
+                <td class="text-center">
+                  <a class="btn btn-sm btn-light border shadow-sm" href="./vehicle-bugged-form.php">
+                    <i class="fas fa-eye text-primary"></i>
+                  </a>
+                </td>
+              </tr>
+              <tr>
+               
+                <td><span class="badge bg-light text-dark border">VH-552</span></td>
+                 <td>
+                  <div >Aslam khan</div>
+                </td>
+                <td>
+                  Mud
+                </td>
+                <td>
+                  <small><i class="fas fa-map-marker-alt text-danger me-1"></i> Islamabad</small>
+                </td>
+                <td class="text-center">
+                  <a class="btn btn-sm btn-light border shadow-sm" href="./vehicle-bugged-form.php">
+                    <i class="fas fa-eye text-primary"></i>
+                  </a>
+                </td>
+              </tr>
+              <tr>
+               
+                <td><span class="badge bg-light text-dark border">VH-552</span></td>
+                 <td>
+                  <div >Aslam khan</div>
+                </td>
+                <td>
+                  Mud
+                </td>
+                <td>
+                  <small><i class="fas fa-map-marker-alt text-danger me-1"></i> Islamabad</small>
+                </td>
+                <td class="text-center">
+                  <a class="btn btn-sm btn-light border shadow-sm" href="./vehicle-bugged-form.php">
+                    <i class="fas fa-eye text-primary"></i>
                   </a>
                 </td>
               </tr>
@@ -111,6 +175,8 @@ include("../nav.php");
         </div>
       </div>
     </div>
+
+  <?php include("../footer.php"); ?>
   </div>
 </div>
 
@@ -179,4 +245,3 @@ include("../nav.php");
   </div>
 </div>
 
-<?php include("../footer.php"); ?>
