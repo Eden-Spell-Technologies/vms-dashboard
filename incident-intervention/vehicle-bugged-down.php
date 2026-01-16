@@ -25,7 +25,7 @@ if (!isset($_SESSION['user'])) {
     <div id="bugged-down-view" class="px-4 px-md-5 py-4">
       <div class="d-md-flex justify-content-between align-items-center mb-4">
         <div>
-          <div class="d-flex align-items-start">
+          <div class="d-flex align-items-start ">
             <a class="btn secondary-hover rounded-circle me-3" href="./incident-intervention.php" style="
                       width: 40px;
                       height: 40px;
@@ -48,13 +48,13 @@ if (!isset($_SESSION['user'])) {
         <div class="d-flex gap-2">
           <button class="btn secondary-color rounded-pill px-4 fw-bold shadow-sm" data-bs-toggle="modal"
             data-bs-target="#buggedDownModal">
-            <i class="fas fa-plus me-1"></i> Add New Bugged Case
+            <i class="fas fa-plus me-1"></i> Add Bugged Case
           </button>
         </div>
       </div>
 
       <div class="row g-3 mb-2">
-        <div class="col-md-6 col-lg-4">
+        <div class="col-md-6 col-xl-4">
           <div class="stat-card shadow-sm p-3">
             <div class="d-flex align-items-center">
               <div class="icon-box bg-success-subtle text-success me-3">
@@ -67,7 +67,7 @@ if (!isset($_SESSION['user'])) {
             </div>
           </div>
         </div>
-        <div class="col-md-6 col-lg-4">
+        <div class="col-md-6 col-xl-4">
           <div class="stat-card shadow-sm p-3">
             <div class="d-flex align-items-center">
               <div class="icon-box bg-secondary-subtle text-secondary me-3">

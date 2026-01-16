@@ -176,7 +176,7 @@ include("header_meta.php");
 
 
         <div class="row g-4 mb-5">
-          <div class="col-xl-8 col-lg-7">
+          <div class="col-xl-8 ">
             <div class="card border-0 shadow-sm rounded-4">
               <div class="card-header bg-transparent border-0 pt-4 px-4">
                 <h5 class="fw-bold mb-0">Operation Performance</h5>
@@ -188,7 +188,7 @@ include("header_meta.php");
             </div>
           </div>
 
-          <div class="col-xl-4 col-lg-5">
+          <div class="col-xl-4 ">
             <div class="card border-0 shadow-sm rounded-4">
               <div class="card-header bg-transparent border-0 pt-4 px-4">
                 <h5 class="fw-bold mb-0">Fleet Health</h5>

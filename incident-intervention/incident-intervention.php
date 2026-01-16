@@ -327,49 +327,55 @@ include("../header_meta.php");
                     </div>
                 </div>
 
-               <div class="col-xl-4">
-    <div class="card border-0 rounded-5 shadow-sm h-100 bg-white overflow-hidden">
-        <div class="card-body p-4">
-            <div class="d-flex justify-content-between align-items-center mb-4">
-                <h6 class="text-uppercase small fw-bold text-muted mb-0" style="letter-spacing: 1px;">Security Score</h6>
-                <button class="btn btn-light btn-sm rounded-circle border shadow-none"><i class="fas fa-info-circle text-muted"></i></button>
-            </div>
+                <div class="col-xl-4">
+                    <div class="card border-0 rounded-5 shadow-sm h-100 bg-white overflow-hidden">
+                        <div class="card-body p-4">
+                            <div class="d-flex justify-content-between align-items-center mb-4">
+                                <h6 class="text-uppercase small fw-bold text-muted mb-0" style="letter-spacing: 1px;">
+                                    Security Score</h6>
+                                <button class="btn btn-light btn-sm rounded-circle border shadow-none"><i
+                                        class="fas fa-info-circle text-muted"></i></button>
+                            </div>
 
-            <div class="text-center py-3 position-relative">
-                <svg width="160" height="160" viewBox="0 0 100 100">
-                    <circle cx="50" cy="50" r="45" fill="none" stroke="#f1f5f9" stroke-width="8" />
-                    <circle cx="50" cy="50" r="45" fill="none" stroke="#2ec4b6" stroke-width="8" 
-                            stroke-dasharray="282.7" stroke-dashoffset="56.5" 
-                            stroke-linecap="round" transform="rotate(-90 50 50)" 
-                            style="transition: stroke-dashoffset 1s ease-in-out;" />
-                </svg>
-                <div class="position-absolute top-50 start-50 translate-middle text-center">
-                    <h2 class="fw-bolder mb-0 text-dark">82%</h2>
-                    <small class="text-success fw-bold extra-small"><i class="fas fa-caret-up"></i> 4%</small>
-                </div>
-            </div>
-            
-            <div class="mt-4">
-                <div class="d-flex align-items-center mb-3 p-3 rounded-4 bg-light border border-light-subtle">
-                    <div class="icon-sm bg-success text-white rounded-circle me-3 shadow-success-sm"><i class="fas fa-shield-alt"></i></div>
-                    <div class="flex-grow-1">
-                        <div class="d-flex justify-content-between">
-                            <p class="mb-0 small fw-bold text-dark">System Integrity</p>
-                            <span class="extra-small fw-bold text-success">Secure</span>
-                        </div>
-                        <div class="progress mt-1" style="height: 4px;">
-                            <div class="progress-bar bg-success" style="width: 90%"></div>
+                            <div class="text-center py-3 position-relative">
+                                <svg width="160" height="160" viewBox="0 0 100 100">
+                                    <circle cx="50" cy="50" r="45" fill="none" stroke="#f1f5f9" stroke-width="8" />
+                                    <circle cx="50" cy="50" r="45" fill="none" stroke="#2ec4b6" stroke-width="8"
+                                        stroke-dasharray="282.7" stroke-dashoffset="56.5" stroke-linecap="round"
+                                        transform="rotate(-90 50 50)"
+                                        style="transition: stroke-dashoffset 1s ease-in-out;" />
+                                </svg>
+                                <div class="position-absolute top-50 start-50 translate-middle text-center">
+                                    <h2 class="fw-bolder mb-0 text-dark">82%</h2>
+                                    <small class="text-success fw-bold extra-small"><i class="fas fa-caret-up"></i>
+                                        4%</small>
+                                </div>
+                            </div>
+
+                            <div class="mt-4">
+                                <div
+                                    class="d-flex align-items-center mb-3 p-3 rounded-4 bg-light border border-light-subtle">
+                                    <div class="icon-sm bg-success text-white rounded-circle me-3 shadow-success-sm"><i
+                                            class="fas fa-shield-alt"></i></div>
+                                    <div class="flex-grow-1">
+                                        <div class="d-flex justify-content-between">
+                                            <p class="mb-0 small fw-bold text-dark">System Integrity</p>
+                                            <span class="extra-small fw-bold text-success">Secure</span>
+                                        </div>
+                                        <div class="progress mt-1" style="height: 4px;">
+                                            <div class="progress-bar bg-success" style="width: 90%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <button
+                                    class="btn secondary-color w-100 rounded-pill fw-bold py-2 mt-2">
+                                    <i class="fas fa-file-medical-alt me-2"></i> View Security Audit
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
-
-                <button class="btn btn-primary w-100 rounded-pill fw-bold py-2 shadow-primary border-0 mt-2">
-                    <i class="fas fa-file-medical-alt me-2"></i> View Security Audit
-                </button>
-            </div>
-        </div>
-    </div>
-</div>
             </div>
 
 

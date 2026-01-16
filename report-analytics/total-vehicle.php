@@ -45,7 +45,7 @@ if (!isset($_SESSION['user'])) {
                 </div>
 
                 <div class="row g-3 mb-3">
-                    <div class="col-md-3">
+                    <div class="col-md-6 col-xl-3">
                         <div class="stat-card shadow-sm border-0">
                             <div class="icon-box bg-primary text-white">
                                 <i class="fas fa-truck"></i>
@@ -57,7 +57,7 @@ if (!isset($_SESSION['user'])) {
                         </div>
                     </div>
 
-                    <div class="col-md-3">
+                    <div class="col-md-6 col-xl-3">
                         <div class="stat-card shadow-sm border-0">
                             <div class="icon-box bg-success text-white">
                                 <i class="fas fa-check-circle"></i>
@@ -69,7 +69,7 @@ if (!isset($_SESSION['user'])) {
                         </div>
                     </div>
 
-                    <div class="col-md-3">
+                    <div class="col-md-6 col-xl-3">
                         <div class="stat-card shadow-sm border-0">
                             <div class="icon-box bg-warning text-dark">
                                 <i class="fas fa-tools"></i>
@@ -81,7 +81,7 @@ if (!isset($_SESSION['user'])) {
                         </div>
                     </div>
 
-                    <div class="col-md-3">
+                    <div class="col-md-6 col-xl-3">
                         <div class="stat-card shadow-sm border-0">
                             <div class="icon-box bg-danger text-white">
                                 <i class="fas fa-exclamation-circle"></i>

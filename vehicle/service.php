@@ -45,7 +45,7 @@ include("../header_meta.php");
         </div>
 
         <div class="row g-3 mb-2">
-          <div class="col-md-3">
+          <div class="col-md-6 col-xl-3">
             <div class="stat-card shadow-sm border-0">
               <div class="icon-box bg-danger text-white">
                 <i class="fas fa-oil-can"></i>
@@ -56,7 +56,7 @@ include("../header_meta.php");
               </div>
             </div>
           </div>
-          <div class="col-md-3">
+          <div class="col-md-6 col-xl-3">
             <div class="stat-card shadow-sm border-0">
               <div class="icon-box bg-success text-white">
                 <i class="fas fa-file-invoice-dollar"></i>
@@ -67,7 +67,7 @@ include("../header_meta.php");
               </div>
             </div>
           </div>
-          <div class="col-md-3">
+          <div class="col-md-6 col-xl-3">
             <div class="stat-card shadow-sm border-0">
               <div class="icon-box bg-primary text-white">
                 <i class="fas fa-calendar-check"></i>
@@ -78,7 +78,7 @@ include("../header_meta.php");
               </div>
             </div>
           </div>
-          <div class="col-md-3">
+          <div class="col-md-6 col-xl-3">
             <div class="stat-card shadow-sm border-0">
               <div class="icon-box bg-warning text-dark">
                 <i class="fas fa-wrench"></i>

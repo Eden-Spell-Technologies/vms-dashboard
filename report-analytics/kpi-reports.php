@@ -25,7 +25,7 @@ if (!isset($_SESSION['user'])) {
         <!-- driver detail -->
         <div id="check-driver-view" class="px-4 px-md-5 py-4 ">
             <div id="driver-table-view">
-                <div class="d-md-flex justify-content-between align-items-center mb-4">
+                <div class="d-md-flex justify-content-between align-items-center mb-3">
                     <div class="d-flex align-items-center">
                         <a class="btn secondary-hover rounded-circle me-3" href="./report-analytics.php" style="
                     width: 40px;
@@ -44,8 +44,8 @@ if (!isset($_SESSION['user'])) {
                     </div>
                 </div>
 
-                <div class="row g-3 mb-4">
-                    <div class="col-md-3">
+                <div class="row g-3 mb-3">
+                    <div class="col-md-6 col-xl-3">
                         <div class="stat-card shadow-sm border-0">
                             <div class="icon-box bg-success text-white">
                                 <i class="fas fa-boxes"></i>
@@ -57,7 +57,7 @@ if (!isset($_SESSION['user'])) {
                         </div>
                     </div>
 
-                    <div class="col-md-3">
+                    <div class="col-md-6 col-xl-3">
                         <div class="stat-card shadow-sm border-0">
                             <div class="icon-box bg-danger text-white">
                                 <i class="fas fa-biohazard"></i>
@@ -69,7 +69,7 @@ if (!isset($_SESSION['user'])) {
                         </div>
                     </div>
 
-                    <div class="col-md-3">
+                    <div class="col-md-6 col-xl-3">
                         <div class="stat-card shadow-sm border-0">
                             <div class="icon-box bg-warning text-dark">
                                 <i class="fas fa-hand-holding-usd"></i>
@@ -81,7 +81,7 @@ if (!isset($_SESSION['user'])) {
                         </div>
                     </div>
 
-                    <div class="col-md-3">
+                    <div class="col-md-6 col-xl-3">
                         <div class="stat-card shadow-sm border-0">
                             <div class="icon-box bg-info text-white">
                                 <i class="fas fa-file-signature"></i>

@@ -8,8 +8,8 @@ if (!isset($_SESSION['user'])) {
 ?>
 
 <?php
-  include("../header_meta.php");
-  ?>
+include("../header_meta.php");
+?>
 
 <div id="dashboard-page">
 
@@ -25,7 +25,7 @@ if (!isset($_SESSION['user'])) {
         <!-- driver detail -->
         <div id="check-driver-view" class="px-4 px-md-5 py-4 ">
             <div id="driver-table-view">
-                <div class="d-md-flex justify-content-between align-items-center mb-4">
+                <div class="d-md-flex justify-content-between align-items-center mb-2">
                     <div class="d-flex align-items-center">
                         <a class="btn secondary-hover rounded-circle me-3" href="./report-analytics.php" style="
                     width: 40px;
@@ -44,8 +44,8 @@ if (!isset($_SESSION['user'])) {
                     </div>
                 </div>
 
-                <div class="row g-3 mb-4">
-                    <div class="col-md-3">
+                <div class="row g-3 mb-3">
+                    <div class="col-md-6 col-xl-3">
                         <div class="stat-card shadow-sm border-0">
                             <div class="icon-box bg-primary text-white">
                                 <i class="fas fa-road"></i>
@@ -57,7 +57,7 @@ if (!isset($_SESSION['user'])) {
                         </div>
                     </div>
 
-                    <div class="col-md-3">
+                    <div class="col-md-6 col-xl-3">
                         <div class="stat-card shadow-sm border-0">
                             <div class="icon-box bg-info text-white">
                                 <i class="fas fa-file-invoice"></i>
@@ -69,7 +69,7 @@ if (!isset($_SESSION['user'])) {
                         </div>
                     </div>
 
-                    <div class="col-md-3">
+                    <div class="col-md-6 col-xl-3">
                         <div class="stat-card shadow-sm border-0">
                             <div class="icon-box bg-success text-white">
                                 <i class="fas fa-gas-pump"></i>
@@ -81,7 +81,7 @@ if (!isset($_SESSION['user'])) {
                         </div>
                     </div>
 
-                    <div class="col-md-3">
+                    <div class="col-md-6 col-xl-3">
                         <div class="stat-card shadow-sm border-0">
                             <div class="icon-box bg-dark text-white">
                                 <i class="fas fa-tachometer-alt"></i>
@@ -101,45 +101,62 @@ if (!isset($_SESSION['user'])) {
                             <div class="card-body p-3">
                                 <div class="table-responsive">
                                     <table
-                                        class="table table-hover align-middle text-center mb-0  scrollable-tbody">
-                                        <thead class="bg-light small fw-bold">
-                                            <tr>
-                                                <th>Route</th>
-                                                <th>Waybill</th>
-                                                <th>Driver Info</th>
-                                                <th>Mate Info</th>
-                                                <th>Departure</th>
-                                                <th>Arrival</th>
-                                                <th>Distance</th>
-                                                <th>Fuel (S/E)</th>
-                                                <th>Odometer</th>
-                                                <th>Action</th>
+                                        class="table table-hover align-middle text-center mb-0 global-datatable scrollable-tbody">
+                                        <thead class="bg-light">
+                                            <tr class="bg-light fw-bold small"
+                                                style="letter-spacing: 0.5px;">
+                                                <th class="ps-4">Trip Identity</th>
+                                                <th>Driver / Mate Info</th>
+                                                <th>Timing</th>
+                                                <th>Distance (km)</th>
+                                                <th>Fuel & Health</th>
+                                                <th class="text-center">Action</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <td class="fw-bold text-primary">KHI <i
-                                                        class="fas fa-arrow-right mx-1"></i>
-                                                    LHR</td>
-                                                <td><span class="badge bg-light text-dark border">#WBL-99021</span></td>
-                                                <td class="">
-                                                    <div class="small fw-bold">M. Ahmed</div>
-                                                    <small class="text-muted">0300-1234567</small>
+                                                <td class="ps-4">
+                                                     <span class="small fw-semibold text-primary">KHI <i
+                                                            class="fas fa-arrow-right mx-1"></i>
+                                                        LHR</span>
+                                                    <span
+                                                        class="badge bg-primary-subtle text-primary extra-small fw-normal mt-1">Waybill:
+                                                        #WB-7822</span>
                                                 </td>
-                                                <td class="">
-                                                    <div class="small fw-bold">M. Bilal</div>
-                                                    <small class="text-muted">0300-1234567</small>
-                                                </td>
+
                                                 <td>
-                                                    <div class="small fw-bold text-danger">08:00 AM</div>
+                                                    <div class="d-flex align-items-center">
+                                                        <div class="me-2 text-center" style="width: 30px;">
+                                                            <i class="fas fa-user-circle text-secondary fa-lg"></i>
+                                                        </div>
+                                                        <div>
+                                                            <p class="mb-0 fw-bold small text-dark">Arshad Khan</p>
+                                                            <p class="text-muted extra-small mb-0">Mate: Ali Raza</p>
+                                                        </div>
+                                                    </div>
                                                 </td>
+
                                                 <td>
-                                                    <div class="small fw-bold text-success">10:00 PM</div>
+                                                    <div class="extra-small text-dark fw-bold">D: <span
+                                                            class="fw-normal text-muted">15 Jan, 09:00</span></div>
+                                                    <div class="extra-small text-dark fw-bold">A: <span
+                                                            class="fw-normal text-muted">16 Jan, 21:00</span></div>
                                                 </td>
-                                                <td>1,214 km</td>
-                                                <td>Full / 1/4</td>
-                                                <td><small>45k / 46.2k</small></td>
+
                                                 <td>
+                                                    <span class="badge bg-light text-dark fw-bold border">1,210
+                                                        km</span>
+                                                </td>
+
+                                                <td>
+                                                    <div class="d-flex flex-column">
+                                                        <span class="text-success extra-small fw-bold">Fuel: 450L /
+                                                            440L</span>
+                                                        <span class="text-muted extra-small">Odo: 45,600 km</span>
+                                                    </div>
+                                                </td>
+
+                                                <td class="text-center pe-4">
                                                     <button type="button"
                                                         class="btn btn-sm btn-light border shadow-sm btn-delete"
                                                         title="Delete">
@@ -147,29 +164,50 @@ if (!isset($_SESSION['user'])) {
                                                     </button>
                                                 </td>
                                             </tr>
-                                            <tr>
-                                                <td class="fw-bold text-primary">KHI <i
-                                                        class="fas fa-arrow-right mx-1"></i>
-                                                    LHR</td>
-                                                <td><span class="badge bg-light text-dark border">#WBL-99021</span></td>
-                                                <td class="">
-                                                    <div class="small fw-bold">M. Ahmed</div>
-                                                    <small class="text-muted">0300-1234567</small>
+
+                                             <tr>
+                                                <td class="ps-4">
+                                                     <span class="small fw-semibold text-primary">KHI <i
+                                                            class="fas fa-arrow-right mx-1"></i>
+                                                        LHR</span>
+                                                    <span
+                                                        class="badge bg-primary-subtle text-primary extra-small fw-normal mt-1">Waybill:
+                                                        #WB-7822</span>
                                                 </td>
-                                                <td class="">
-                                                    <div class="small fw-bold">M. Bilal</div>
-                                                    <small class="text-muted">0300-1234567</small>
-                                                </td>
+
                                                 <td>
-                                                    <div class="small fw-bold text-danger">08:00 AM</div>
+                                                    <div class="d-flex align-items-center">
+                                                        <div class="me-2 text-center" style="width: 30px;">
+                                                            <i class="fas fa-user-circle text-secondary fa-lg"></i>
+                                                        </div>
+                                                        <div>
+                                                            <p class="mb-0 fw-bold small text-dark">Arshad Khan</p>
+                                                            <p class="text-muted extra-small mb-0">Mate: Ali Raza</p>
+                                                        </div>
+                                                    </div>
                                                 </td>
+
                                                 <td>
-                                                    <div class="small fw-bold text-success">10:00 PM</div>
+                                                    <div class="extra-small text-dark fw-bold">D: <span
+                                                            class="fw-normal text-muted">15 Jan, 09:00</span></div>
+                                                    <div class="extra-small text-dark fw-bold">A: <span
+                                                            class="fw-normal text-muted">16 Jan, 21:00</span></div>
                                                 </td>
-                                                <td>1,214 km</td>
-                                                <td>Full / 1/4</td>
-                                                <td><small>45k / 46.2k</small></td>
+
                                                 <td>
+                                                    <span class="badge bg-light text-dark fw-bold border">1,210
+                                                        km</span>
+                                                </td>
+
+                                                <td>
+                                                    <div class="d-flex flex-column">
+                                                        <span class="text-success extra-small fw-bold">Fuel: 450L /
+                                                            440L</span>
+                                                        <span class="text-muted extra-small">Odo: 45,600 km</span>
+                                                    </div>
+                                                </td>
+
+                                                <td class="text-center pe-4">
                                                     <button type="button"
                                                         class="btn btn-sm btn-light border shadow-sm btn-delete"
                                                         title="Delete">
@@ -177,29 +215,50 @@ if (!isset($_SESSION['user'])) {
                                                     </button>
                                                 </td>
                                             </tr>
-                                            <tr>
-                                                <td class="fw-bold text-primary">KHI <i
-                                                        class="fas fa-arrow-right mx-1"></i>
-                                                    LHR</td>
-                                                <td><span class="badge bg-light text-dark border">#WBL-99021</span></td>
-                                                <td class="">
-                                                    <div class="small fw-bold">M. Ahmed</div>
-                                                    <small class="text-muted">0300-1234567</small>
+
+                                             <tr>
+                                                <td class="ps-4">
+                                                     <span class="small fw-semibold text-primary">KHI <i
+                                                            class="fas fa-arrow-right mx-1"></i>
+                                                        LHR</span>
+                                                    <span
+                                                        class="badge bg-primary-subtle text-primary extra-small fw-normal mt-1">Waybill:
+                                                        #WB-7822</span>
                                                 </td>
-                                                <td class="">
-                                                    <div class="small fw-bold">M. Bilal</div>
-                                                    <small class="text-muted">0300-1234567</small>
-                                                </td>
+
                                                 <td>
-                                                    <div class="small fw-bold text-danger">08:00 AM</div>
+                                                    <div class="d-flex align-items-center">
+                                                        <div class="me-2 text-center" style="width: 30px;">
+                                                            <i class="fas fa-user-circle text-secondary fa-lg"></i>
+                                                        </div>
+                                                        <div>
+                                                            <p class="mb-0 fw-bold small text-dark">Arshad Khan</p>
+                                                            <p class="text-muted extra-small mb-0">Mate: Ali Raza</p>
+                                                        </div>
+                                                    </div>
                                                 </td>
+
                                                 <td>
-                                                    <div class="small fw-bold text-success">10:00 PM</div>
+                                                    <div class="extra-small text-dark fw-bold">D: <span
+                                                            class="fw-normal text-muted">15 Jan, 09:00</span></div>
+                                                    <div class="extra-small text-dark fw-bold">A: <span
+                                                            class="fw-normal text-muted">16 Jan, 21:00</span></div>
                                                 </td>
-                                                <td>1,214 km</td>
-                                                <td>Full / 1/4</td>
-                                                <td><small>45k / 46.2k</small></td>
+
                                                 <td>
+                                                    <span class="badge bg-light text-dark fw-bold border">1,210
+                                                        km</span>
+                                                </td>
+
+                                                <td>
+                                                    <div class="d-flex flex-column">
+                                                        <span class="text-success extra-small fw-bold">Fuel: 450L /
+                                                            440L</span>
+                                                        <span class="text-muted extra-small">Odo: 45,600 km</span>
+                                                    </div>
+                                                </td>
+
+                                                <td class="text-center pe-4">
                                                     <button type="button"
                                                         class="btn btn-sm btn-light border shadow-sm btn-delete"
                                                         title="Delete">
@@ -207,29 +266,50 @@ if (!isset($_SESSION['user'])) {
                                                     </button>
                                                 </td>
                                             </tr>
-                                            <tr>
-                                                <td class="fw-bold text-primary">KHI <i
-                                                        class="fas fa-arrow-right mx-1"></i>
-                                                    LHR</td>
-                                                <td><span class="badge bg-light text-dark border">#WBL-99021</span></td>
-                                                <td class="">
-                                                    <div class="small fw-bold">M. Ahmed</div>
-                                                    <small class="text-muted">0300-1234567</small>
+
+                                             <tr>
+                                                <td class="ps-4">
+                                                    <span class="small fw-semibold text-primary">KHI <i
+                                                            class="fas fa-arrow-right mx-1"></i>
+                                                        LHR</span>
+                                                    <span
+                                                        class="badge bg-primary-subtle text-primary extra-small fw-normal mt-1">Waybill:
+                                                        #WB-7822</span>
                                                 </td>
-                                                <td class="">
-                                                    <div class="small fw-bold">M. Bilal</div>
-                                                    <small class="text-muted">0300-1234567</small>
-                                                </td>
+
                                                 <td>
-                                                    <div class="small fw-bold text-danger">08:00 AM</div>
+                                                    <div class="d-flex align-items-center">
+                                                        <div class="me-2 text-center" style="width: 30px;">
+                                                            <i class="fas fa-user-circle text-secondary fa-lg"></i>
+                                                        </div>
+                                                        <div>
+                                                            <p class="mb-0 fw-bold small text-dark">Arshad Khan</p>
+                                                            <p class="text-muted extra-small mb-0">Mate: Ali Raza</p>
+                                                        </div>
+                                                    </div>
                                                 </td>
+
                                                 <td>
-                                                    <div class="small fw-bold text-success">10:00 PM</div>
+                                                    <div class="extra-small text-dark fw-bold">D: <span
+                                                            class="fw-normal text-muted">15 Jan, 09:00</span></div>
+                                                    <div class="extra-small text-dark fw-bold">A: <span
+                                                            class="fw-normal text-muted">16 Jan, 21:00</span></div>
                                                 </td>
-                                                <td>1,214 km</td>
-                                                <td>Full / 1/4</td>
-                                                <td><small>45k / 46.2k</small></td>
+
                                                 <td>
+                                                    <span class="badge bg-light text-dark fw-bold border">1,210
+                                                        km</span>
+                                                </td>
+
+                                                <td>
+                                                    <div class="d-flex flex-column">
+                                                        <span class="text-success extra-small fw-bold">Fuel: 450L /
+                                                            440L</span>
+                                                        <span class="text-muted extra-small">Odo: 45,600 km</span>
+                                                    </div>
+                                                </td>
+
+                                                <td class="text-center pe-4">
                                                     <button type="button"
                                                         class="btn btn-sm btn-light border shadow-sm btn-delete"
                                                         title="Delete">

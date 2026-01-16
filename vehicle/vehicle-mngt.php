@@ -177,18 +177,18 @@ include("../header_meta.php");
                 <div class="col-xl-8">
                     <div class="card border-0 rounded-5 shadow-sm h-100 overflow-hidden">
                         <div class="card-body p-4">
-                            <div class="d-flex justify-content-between align-items-start mb-4">
-                                <div>
+                            <div class="d-md-flex justify-content-between align-items-start mb-4">
+                                <div class="mb-md-0 mb-3">
                                     <h5 class="fw-bold mb-1 text-dark">Fleet Performance Metrics</h5>
                                     <p class="text-muted small mb-0">Monthly analysis of trips efficiency vs. fuel
                                         consumption</p>
                                 </div>
-                                <div class="d-flex gap-2">
+                                <div class="d-flex align-items-center gap-2 ">
                                     <span
                                         class="badge bg-success-subtle text-success border border-success-subtle rounded-pill px-3 py-2">
                                         <i class="fas fa-arrow-up me-1"></i> 12% Growth
                                     </span>
-                                    <button class="btn btn-light btn-sm rounded-pill px-3 shadow-none border">
+                                    <button class="btn btn-light btn-sm rounded-pill px-2 shadow-none border">
                                         <i class="far fa-calendar-alt me-1"></i> Last 6 Months
                                     </button>
                                 </div>
@@ -250,57 +250,63 @@ include("../header_meta.php");
                             </div>
 
                             <div class="timeline-wrapper">
-    <div class="d-flex mb-4 position-relative">
-        <div class="activity-line"></div>
-        <div class="icon-sm bg-primary-subtle text-primary rounded-circle me-3 z-index-1">
-            <i class="fas fa-plus-circle"></i>
-        </div>
-        <div>
-            <p class="mb-0 fw-bold small text-dark">New Vehicle Onboarded</p>
-            <p class="text-muted extra-small mb-0">VMS-8820 (Hino Truck) added to Fleet A • 5 mins ago</p>
-        </div>
-    </div>
+                                <div class="d-flex mb-4 position-relative">
+                                    <div class="activity-line"></div>
+                                    <div class="icon-sm bg-primary-subtle text-primary rounded-circle me-3 z-index-1">
+                                        <i class="fas fa-plus-circle"></i>
+                                    </div>
+                                    <div>
+                                        <p class="mb-0 fw-bold small text-dark">New Vehicle Onboarded</p>
+                                        <p class="text-muted extra-small mb-0">VMS-8820 (Hino Truck) added to Fleet A •
+                                            5 mins ago</p>
+                                    </div>
+                                </div>
 
-    <div class="col-md-12 d-flex mb-4 position-relative">
-        <div class="icon-sm bg-info-subtle text-info rounded-circle me-3 z-index-1">
-            <i class="fas fa-user-tag"></i>
-        </div>
-        <div>
-            <p class="mb-0 fw-bold small text-dark">Driver Assigned</p>
-            <p class="text-muted extra-small mb-0">Zahid Khan assigned to VMS-1102 • Route: Karachi-LHR • 45 mins ago</p>
-        </div>
-    </div>
+                                <div class="col-md-12 d-flex mb-4 position-relative">
+                                    <div class="icon-sm bg-info-subtle text-info rounded-circle me-3 z-index-1">
+                                        <i class="fas fa-user-tag"></i>
+                                    </div>
+                                    <div>
+                                        <p class="mb-0 fw-bold small text-dark">Driver Assigned</p>
+                                        <p class="text-muted extra-small mb-0">Zahid Khan assigned to VMS-1102 • Route:
+                                            Karachi-LHR • 45 mins ago</p>
+                                    </div>
+                                </div>
 
-    <div class="d-flex mb-4 position-relative">
-        <div class="icon-sm bg-success-subtle text-success rounded-circle me-3 z-index-1">
-            <i class="fas fa-clipboard-check"></i>
-        </div>
-        <div>
-            <p class="mb-0 fw-bold small text-dark">Inspection Completed</p>
-            <p class="text-muted extra-small mb-0">VMS-9941 passed monthly fitness test • Verified by Inspector Ali • 2 hours ago</p>
-        </div>
-    </div>
+                                <div class="d-flex mb-4 position-relative">
+                                    <div class="icon-sm bg-success-subtle text-success rounded-circle me-3 z-index-1">
+                                        <i class="fas fa-clipboard-check"></i>
+                                    </div>
+                                    <div>
+                                        <p class="mb-0 fw-bold small text-dark">Inspection Completed</p>
+                                        <p class="text-muted extra-small mb-0">VMS-9941 passed monthly fitness test •
+                                            Verified by Inspector Ali • 2 hours ago</p>
+                                    </div>
+                                </div>
 
-    <div class="d-flex mb-4 position-relative">
-        <div class="icon-sm bg-warning-subtle text-warning rounded-circle me-3 z-index-1">
-            <i class="fas fa-file-invoice"></i>
-        </div>
-        <div>
-            <p class="mb-0 fw-bold small text-dark">Document Expiry Alert</p>
-            <p class="text-muted extra-small mb-0">VMS-2024 Insurance expiring in 3 days • Action Required • 5 hours ago</p>
-        </div>
-    </div>
+                                <div class="d-flex mb-4 position-relative">
+                                    <div class="icon-sm bg-warning-subtle text-warning rounded-circle me-3 z-index-1">
+                                        <i class="fas fa-file-invoice"></i>
+                                    </div>
+                                    <div>
+                                        <p class="mb-0 fw-bold small text-dark">Document Expiry Alert</p>
+                                        <p class="text-muted extra-small mb-0">VMS-2024 Insurance expiring in 3 days •
+                                            Action Required • 5 hours ago</p>
+                                    </div>
+                                </div>
 
-    <div class="d-flex position-relative">
-        <div class="icon-sm bg-secondary-subtle text-secondary rounded-circle me-3 z-index-1">
-            <i class="fas fa-toggle-on"></i>
-        </div>
-        <div>
-            <p class="mb-0 fw-bold small text-dark">Vehicle Status Updated</p>
-            <p class="text-muted extra-small mb-0">VMS-7822 changed from 'Idle' to 'In-Transit' • 8 hours ago</p>
-        </div>
-    </div>
-</div>
+                                <div class="d-flex position-relative">
+                                    <div
+                                        class="icon-sm bg-secondary-subtle text-secondary rounded-circle me-3 z-index-1">
+                                        <i class="fas fa-toggle-on"></i>
+                                    </div>
+                                    <div>
+                                        <p class="mb-0 fw-bold small text-dark">Vehicle Status Updated</p>
+                                        <p class="text-muted extra-small mb-0">VMS-7822 changed from 'Idle' to
+                                            'In-Transit' • 8 hours ago</p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
