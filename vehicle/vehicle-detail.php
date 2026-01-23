@@ -95,6 +95,7 @@ if (!isset($_SESSION['user'])) {
           <thead class="table-light">
             <tr>
               <th>Truck No</th>
+              <th>Fleet No</th>
               <th>Vehicle Owner Name</th>
               <th>Vehicle Manager Name</th>
               <th>Make / Model</th>
@@ -105,6 +106,7 @@ if (!isset($_SESSION['user'])) {
           <tbody>
             <tr>
               <td>AB-1234</td>
+              <td>VH-789</td>
               <td>Zaid Ali</td>
               <td>John Deo</td>
               <td>Volkswagen Voyage</td>
@@ -117,6 +119,7 @@ if (!isset($_SESSION['user'])) {
             </tr>
              <tr>
                <td>AB-1234</td>
+               <td>VH-789</td>
               <td>Zaid Ali</td>
               <td>John Deo</td>
               <td>Volkswagen Voyage</td>
@@ -129,6 +132,7 @@ if (!isset($_SESSION['user'])) {
             </tr>
             <tr>
               <td>AB-1234</td>
+              <td>VH-789</td>
               <td>Zaid Ali</td>
               <td>John Deo</td>
               <td>Volkswagen Voyage</td>
@@ -141,6 +145,7 @@ if (!isset($_SESSION['user'])) {
             </tr>
             <tr>
                <td>AB-1234</td>
+               <td>VH-789</td>
               <td>Zaid Ali</td>
               <td>John Deo</td>
               <td>Volkswagen Voyage</td>
@@ -258,7 +263,7 @@ if (!isset($_SESSION['user'])) {
 
           <div class="col-md-6">
             <label class="small fw-bold mb-1">Last Service Date</label>
-            <input type="text" class="form-control border-dark shadow-sm" value="15 Jan 2024" />
+            <input type="date" class="form-control border-dark shadow-sm" value="15 Jan 2024" />
           </div>
 
           <div class="col-md-6">
@@ -271,7 +276,15 @@ if (!isset($_SESSION['user'])) {
             <input type="text" class="form-control border-dark shadow-sm" value="Enugu Depot" />
           </div>
 
+           <div class="col-md-6">
+            <label class="small fw-bold mb-1">Insurance Expiry Date</label>
+            <input type="date" class="form-control border-dark shadow-sm" value="23/03/2026" />
+          </div>
 
+          <div class="col-md-6">
+            <label class="small fw-bold mb-1">Vehicle License Expiry</label>
+            <input type="date" class="form-control border-dark shadow-sm" value="23/08/2030" />
+          </div>
 
           <div class="col-12 text-center mt-4">
             <button type="button" class="btn secondary-color px-5 py-2 rounded-pill fw-bold shadow">

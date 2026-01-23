@@ -27,9 +27,31 @@ include("../header_meta.php");
 
         <!-- incident and intervention -->
         <div id="incidents-mgmt-view" class="px-4 px-md-5 py-4">
-            <div class="row align-items-center mb-3">
-                <div class="col-md-8">
-                    <h2 class="fw-bold text-dark tracking-tight mb-1">Incident & Intervention</h2>
+            <div class="row align-items-center mb-4">
+                <div class="col-md-7 col-xl-9">
+                    <h2 class="fw-bold  tracking-tight mb-1">Incident & Intervention</h2>
+                </div>
+
+                <div class="col-md-5 col-xl-3">
+                    <div class="d-flex justify-content-md-end mt-3 mt-md-0">
+
+                        <div class="input-group shadow-sm border rounded-3">
+                            <select class="form-select border-0 py-2  small " 
+                                style="cursor: pointer; outline: none; box-shadow: none; background-color: #ffffff;">
+                                <option value="24h">Last 24 hours</option>
+                                <option value="7d" selected>Last 7 days</option>
+                                <option value="14d">Last 14 days</option>
+                                <option value="30d">Last 30 days</option>
+                                <option value="90d">Last 90 days</option>
+                                <option value="12m">All</option>
+                            </select>
+
+                            <button class="btn secondary-color border-1 px-3" type="button" id="filterBtn">
+                                <i class="fas fa-filter small"></i>
+                            </button>
+                        </div>
+
+                    </div>
                 </div>
             </div>
 
@@ -368,8 +390,7 @@ include("../header_meta.php");
                                     </div>
                                 </div>
 
-                                <button
-                                    class="btn secondary-color w-100 rounded-pill fw-bold py-2 mt-2">
+                                <button class="btn secondary-color w-100 rounded-pill fw-bold py-2 mt-2">
                                     <i class="fas fa-file-medical-alt me-2"></i> View Security Audit
                                 </button>
                             </div>

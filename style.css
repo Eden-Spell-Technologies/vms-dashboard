@@ -234,7 +234,7 @@ body {
   color: white;
 }
 .nav-link i {
-  width: 30px;
+  width: 25px;
   font-size: 1.1rem;
 }
 
@@ -245,7 +245,6 @@ body {
 .nav-menu .nav-link {
   transition: all 0.2s ease-in-out;
 }
-
 
 /* Page load hone ke baad transition on hogi */
 body.ready #sidebar {
@@ -301,7 +300,6 @@ body.ready #main-wrapper {
   border-color: var(--btn);
 }
 
-
 /* --- Main Content --- */
 #main-wrapper {
   margin-left: var(--sidebar-width);
@@ -310,8 +308,6 @@ body.ready #main-wrapper {
   display: flex; /* footer push ke liye */
   flex-direction: column;
 }
-
-
 
 /* dashboard css */
 
@@ -359,32 +355,32 @@ body.ready #main-wrapper {
 
 /* Number Badge Styling */
 .count-badge {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    padding: 5px 15px;
-    border-radius: 50px; /* Capsule shape */
-    font-size: 0.85rem;
-    font-weight: 800;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    z-index: 2;
-    transition: all 0.3s ease;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  padding: 5px 15px;
+  border-radius: 50px; /* Capsule shape */
+  font-size: 0.85rem;
+  font-weight: 800;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  z-index: 2;
+  transition: all 0.3s ease;
 }
 
 /* Hover Effect for Badge */
 .metric-card:hover .count-badge {
-    transform: scale(1.1);
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+  transform: scale(1.1);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
 }
 
 /* Aligning Card Content to not overlap badge */
 .metric-card .position-relative {
-    z-index: 1;
+  z-index: 1;
 }
 
 /* Utility for better spacing */
 .shadow-hover {
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
 }
 
 /* Custom Soft Badges */
@@ -447,8 +443,12 @@ body.ready #main-wrapper {
 .stat-card:hover {
   transform: translateY(-5px); /* Hover par halka sa upar uthega */
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-  
-  background: linear-gradient(145deg, #ffffff, #f8fafc); /* Halki si gradient shine */
+
+  background: linear-gradient(
+    145deg,
+    #ffffff,
+    #f8fafc
+  ); /* Halki si gradient shine */
 }
 
 .icon-box {
@@ -487,12 +487,10 @@ body.ready #main-wrapper {
 /* --- Shape Hover Effect --- */
 .stat-card:hover::after {
   transform: scale(1.2); /* Shape bari ho jayegi */
-  opacity: 0.08;        /* Thodi zyada wazay ho jayegi */
-  bottom: -18px;           /* Position thodi adjust hogi */
+  opacity: 0.08; /* Thodi zyada wazay ho jayegi */
+  bottom: -18px; /* Position thodi adjust hogi */
   right: -18px;
 }
-
-
 
 .action-card {
   background: var(--primary);
@@ -511,8 +509,6 @@ body.ready #main-wrapper {
   border-color: var(--secondary);
   box-shadow: 0 15px 30px rgba(30, 60, 148, 0.1);
 }
-
-
 
 .vms-service-card {
   background: var(--primary);
@@ -731,6 +727,15 @@ body.ready #main-wrapper {
     > div[class^="col-"]:first-child {
     margin-bottom: 15px !important;
   }
+
+  .table-responsive{
+    overflow-x: hidden;
+  }
+
+  div.table-responsive>div.dataTables_wrapper>div.row {
+    margin: 0;
+    overflow: auto !important;
+}
 }
 
 /* --- Scrollbar Customization --- */
@@ -757,6 +762,14 @@ body.ready #main-wrapper {
   padding: 10px 0;
   margin-top: auto;
   display: none !important;
+}
+
+@media (max-width: 480px) {
+  #sidebar.active {
+    transform: translateX(0);
+    visibility: visible;
+    width: 100% !important;
+  }
 }
 
 /* Sidebar default for desktop (992px+) */
@@ -824,52 +837,47 @@ body.ready #main-wrapper {
   color: var(--primary);
 }
 
-
-
 /* Image par hover effect */
 img[data-bs-toggle="modal"]:hover {
-    transform: scale(1.02);
-    transition: transform 0.3s ease;
+  transform: scale(1.02);
+  transition: transform 0.3s ease;
 }
-
-
 
 #imagePreviewModal .img-fluid {
-    max-height: 85vh; /* Screen se bahar na jaye */
-    width: auto;
+  max-height: 85vh; /* Screen se bahar na jaye */
+  width: auto;
 }
-
 
 /* Vehicle Managment Timeline Styles */
 .timeline-wrapper {
-    position: relative;
-    padding-left: 5px;
+  position: relative;
+  padding-left: 5px;
 }
 
 .icon-sm {
-    width: 32px;
-    height: 32px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 14px;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
 }
 
 .extra-small {
-    font-size: 0.75rem;
+  font-size: 0.75rem;
 }
 
 /* Connecting Line */
 .activity-line {
-    position: absolute;
-    left: 15px;
-    top: 35px;
-    bottom: -15px;
-    width: 2px;
-    background-color: #f1f5f9;
-    z-index: 0;
+  position: absolute;
+  left: 15px;
+  top: 35px;
+  bottom: -15px;
+  width: 2px;
+  background-color: #f1f5f9;
+  z-index: 0;
 }
 
 .z-index-1 {
-    z-index: 1;
+  z-index: 1;
 }

@@ -86,16 +86,6 @@ if (!isset($_SESSION['user'])) {
                         </div>
 
                         <div class="d-flex detail-row">
-                            <div class="detail-label">Driver Name:</div>
-                            <div id="driver-name">Ahmed Khan</div>
-                        </div>
-
-                        <div class="d-flex detail-row">
-                            <div class="detail-label">Motor Mate Name:</div>
-                            <div id="motor-mate-name">Ali Raza</div>
-                        </div>
-
-                        <div class="d-flex detail-row">
                             <div class="detail-label">Date Dispatched:</div>
                             <div id="date-dispatched">20 Dec 2025</div>
                         </div>

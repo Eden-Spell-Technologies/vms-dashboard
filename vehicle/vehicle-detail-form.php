@@ -58,8 +58,8 @@ include("../header_meta.php");
                                 <div>Volkswagen Voyage</div>
                             </div>
                             <div class="d-flex detail-row">
-                                <div class="detail-label">Registration:</div>
-                                <div>KA-01-AB-1234</div>
+                                <div class="detail-label">Truck No:</div>
+                                <div>AB-1234</div>
                             </div>
 
                             <div class="d-flex detail-row">
@@ -86,18 +86,22 @@ include("../header_meta.php");
                                 <div class="detail-label">Base / Site: </div>
                                 <div>Enugu Depot</div>
                             </div>
-                            <!-- <div class="d-flex detail-row">
-                    <div class="detail-label">Fuel Level:</div>
-                    <div>85%</div>
-                </div> -->
-                            <!-- <div class="d-flex detail-row">
-                    <div class="detail-label">Mileage:</div>
-                    <div>85,250 km</div>
-                </div> -->
-                            <div class="d-flex detail-row">
+
+                             <div class="d-flex detail-row">
                                 <div class="detail-label">Client/Vehicle Owner:</div>
                                 <div>Rahul Sharma</div>
                             </div>
+
+                            <div class="d-flex detail-row">
+                                <div class="detail-label">Insurance Expiry Date: </div>
+                                <div>12 April 2026</div>
+                            </div>
+
+                            <div class="d-flex detail-row">
+                                <div class="detail-label">Vehicle License Expiry: </div>
+                                <div>12 April 2030</div>
+                            </div>
+                            
                         </div>
                         <div class="col-xl-5">
                             <div class="text-center p-2">

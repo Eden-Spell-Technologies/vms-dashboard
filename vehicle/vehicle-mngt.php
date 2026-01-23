@@ -25,9 +25,31 @@ include("../header_meta.php");
         ?>
 
         <div id="vehicle-mgmt-view" class="px-4 px-md-5 py-4">
-            <div class="row align-items-center mb-3">
-                <div class="col-md-8">
-                    <h2 class="fw-bold text-dark tracking-tight mb-1">Vehicle Managment</h2>
+           <div class="row align-items-center mb-4">
+                <div class="col-md-7 col-xl-9">
+                    <h2 class="fw-bold  tracking-tight mb-1">Vehicle Managment</h2>
+                </div>
+
+                <div class="col-md-5 col-xl-3">
+                    <div class="d-flex justify-content-md-end mt-3 mt-md-0">
+
+                        <div class="input-group shadow-sm border rounded-3">
+                            <select class="form-select  border-0 py-2  small " 
+                                style="cursor: pointer; outline: none; box-shadow: none; background-color: #ffffff;">
+                                <option value="24h">Last 24 hours</option>
+                                <option value="7d" selected>Last 7 days</option>
+                                <option value="14d">Last 14 days</option>
+                                <option value="30d">Last 30 days</option>
+                                <option value="90d">Last 90 days</option>
+                                <option value="12m">All</option>
+                            </select>
+
+                            <button class="btn secondary-color border-1 px-3" type="button" id="filterBtn">
+                                <i class="fas fa-filter small"></i>
+                            </button>
+                        </div>
+
+                    </div>
                 </div>
             </div>
 
@@ -127,20 +149,66 @@ include("../header_meta.php");
 
                 <div class="col-md-6 col-xl-4">
                     <a class="text-decoration-none metric-card border-0 rounded-5 shadow-hover h-100 d-block"
-                        href="./waybill.php">
+                        href="./waybill-list.php">
                         <div class="card-body p-4 position-relative overflow-hidden">
-                            <div class="metric-shape bg-danger-subtle"></div>
+                            <div class="metric-shape bg-primary-subtle"></div>
                             <div class="d-flex align-items-center position-relative">
-                                <div class="icon-glow bg-danger text-white me-4">
-                                    <i class="fas fa-file-invoice-dollar fa-lg"></i>
+                                <div class="icon-glow bg-primary text-white me-4">
+                                    <i class="fas fa-file-invoice fa-lg"></i>
                                 </div>
                                 <div>
-                                    <h3 class="fw-bolder mb-0 text-dark">250</h3>
-                                    <p class="text-muted small fw-bold mb-0 opacity-75">Waybill Log</p>
+                                    <h3 class="fw-bolder mb-0 text-dark">1,240</h3>
+                                    <p class="text-muted small fw-bold mb-0 opacity-75">Total Waybills</p>
                                 </div>
                                 <div class="ms-auto text-end">
-                                    <span class="badge rounded-pill bg-light text-danger fw-bold p-2 small">
-                                        Bills
+                                    <span class="badge rounded-pill bg-light text-primary fw-bold p-2 small">
+                                        All Time
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-md-6 col-xl-4">
+                    <a class="text-decoration-none metric-card border-0 rounded-5 shadow-hover h-100 d-block"
+                        href="./waybill-awaiting.php">
+                        <div class="card-body p-4 position-relative overflow-hidden">
+                            <div class="metric-shape bg-warning-subtle"></div>
+                            <div class="d-flex align-items-center position-relative">
+                                <div class="icon-glow bg-warning text-white me-4">
+                                    <i class="fas fa-hourglass-half fa-lg"></i>
+                                </div>
+                                <div>
+                                    <h3 class="fw-bolder mb-0 text-dark">18</h3>
+                                    <p class="text-muted small fw-bold mb-0 opacity-75">Awaiting Waybills</p>
+                                </div>
+                                <div class="ms-auto text-end">
+                                    <span class="badge rounded-pill bg-light text-warning fw-bold p-2 small">
+                                        Pending
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-md-6 col-xl-4">
+                    <a class="text-decoration-none metric-card border-0 rounded-5 shadow-hover h-100 d-block"
+                        href="./waybill-allocated.php">
+                        <div class="card-body p-4 position-relative overflow-hidden">
+                            <div class="metric-shape bg-success-subtle"></div>
+                            <div class="d-flex align-items-center position-relative">
+                                <div class="icon-glow bg-success text-white me-4">
+                                    <i class="fas fa-truck-loading fa-lg"></i>
+                                </div>
+                                <div>
+                                    <h3 class="fw-bolder mb-0 text-dark">56</h3>
+                                    <p class="text-muted small fw-bold mb-0 opacity-75">Allocated Waybills</p>
+                                </div>
+                                <div class="ms-auto text-end">
+                                    <span class="badge rounded-pill bg-light text-success fw-bold p-2 small">
+                                        Assigned
                                     </span>
                                 </div>
                             </div>
@@ -170,7 +238,6 @@ include("../header_meta.php");
                         </div>
                     </a>
                 </div>
-
             </div>
 
             <div class="row g-4 mt-2 ">
@@ -193,12 +260,9 @@ include("../header_meta.php");
                                     </button>
                                 </div>
                             </div>
-                           <div  >
-    <img src="../img/fleet.png" 
-         alt="Fleet Performance Metrics"
-         class="img-fluid rounded-3 h-100 w-100"
-         style="object-fit: contain; background: #f8fafc;">
-</div>
+                            <div style="height: 320px; width: 100%;">
+                                <canvas id="performanceLineChart"></canvas>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -212,11 +276,14 @@ include("../header_meta.php");
                             </div>
 
                             <div style="height: 250px; position: relative;" class="my-4">
-                                <img src="../img/fleet3.png" 
-         alt="Fleet Performance Metrics"
-         class="img-fluid rounded-3 h-100 w-100"
-         style="object-fit: contain; background: #f8fafc;">
-                               
+                                <canvas id="statusDonutChart"></canvas>
+                                <div
+                                    style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center;">
+                                    <span class="d-block text-muted small fw-bold text-uppercase"
+                                        style="letter-spacing: 1px;">Fleet</span>
+                                    <h2 class="fw-bolder mb-0 text-dark">142</h2>
+                                    <span class="badge bg-primary rounded-pill small">Units</span>
+                                </div>
                             </div>
 
                             <div class="mt-4 pt-2 border-top">

@@ -192,7 +192,7 @@ include("../header_meta.php");
 
           <div class="col-md-6">
             <label class="small fw-bold mb-1">Date</label>
-            <input type="text" class="form-control border-dark shadow-sm" value="20 Dec 2025" />
+            <input type="date" class="form-control border-dark shadow-sm" value="20 Dec 2025" />
           </div>
 
           <div class="col-md-6">
@@ -215,12 +215,12 @@ include("../header_meta.php");
             <input type="text" class="form-control border-dark shadow-sm" value="Industrial Area, Lahore" />
           </div>
 
-          <div class="col-md-8">
+          <div class="col-md-6">
             <label class="small fw-bold mb-1">Description of Goods</label>
             <input type="text" class="form-control border-dark shadow-sm" value="Electronics / Solar Panels" />
           </div>
 
-          <div class="col-md-4">
+          <div class="col-md-6">
             <label class="small fw-bold mb-1">Quantity</label>
             <input type="text" class="form-control border-dark shadow-sm" value="45 Units / 4,500 KG" />
           </div>
@@ -231,18 +231,8 @@ include("../header_meta.php");
           </div>
 
           <div class="col-md-6">
-            <label class="small fw-bold mb-1">Driver Name</label>
-            <input type="text" class="form-control border-dark shadow-sm" value="Ahmed Khan" />
-          </div>
-
-          <div class="col-md-6">
-            <label class="small fw-bold mb-1">Motor Mate Name</label>
-            <input type="text" class="form-control border-dark shadow-sm" value="Ali Raza" />
-          </div>
-
-          <div class="col-md-6">
             <label class="small fw-bold mb-1">Date Dispatched</label>
-            <input type="text" class="form-control border-dark shadow-sm" value="20 Dec 2025" />
+            <input type="date" class="form-control border-dark shadow-sm" value="20 Dec 2025" />
           </div>
 
           <div class="col-md-4">
@@ -252,7 +242,7 @@ include("../header_meta.php");
 
           <div class="col-md-4">
             <label class="small fw-bold mb-1 ">Current Checkpoint</label>
-            <input type="text" class="form-control border-dark shadow-sm border-2" value="Moro Service Area" />
+            <input type="text" class="form-control border-dark shadow-sm " value="Moro Service Area" />
           </div>
 
           <div class="col-md-4">

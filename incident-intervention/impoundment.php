@@ -7,19 +7,19 @@ if (!isset($_SESSION['user'])) {
 ?>
 
 <?php
-  include("../header_meta.php");
-  ?>
+include("../header_meta.php");
+?>
 
 <div id="dashboard-page">
 
-  <?php
-  include("../sidebar.php");
-  ?>
-  <div id="main-wrapper">
     <?php
-    include("../nav.php");
-
+    include("../sidebar.php");
     ?>
+    <div id="main-wrapper">
+        <?php
+        include("../nav.php");
+
+        ?>
 
         <!-- impoundment -->
         <div id="impoundment-detail-view" class="px-4 px-md-5 py-4">
@@ -87,22 +87,22 @@ if (!isset($_SESSION['user'])) {
                                     <th class="ps-3">Reference No</th>
                                     <th>Driver Name</th>
                                     <th>Reason</th>
-                                     <th>Authority</th>
+                                    <th>Authority</th>
                                     <th class="text-center">Action</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
                                     <td class="ps-3">
-                                       REF-108245
+                                        REF-108245
                                     </td>
                                     <td>Muhammad Ahmed</td>
-                                    
+
                                     <td>
                                         <span class="badge bg-light text-dark border fw-normal">Obstruction</span>
                                     </td>
                                     <td>Traffic Police</td>
-                                   
+
                                     <td class="text-center">
                                         <a class="btn btn-sm btn-light border shadow-sm" href="./impoundment-form.php">
                                             <i class="fas fa-eye text-primary"></i>
@@ -111,15 +111,15 @@ if (!isset($_SESSION['user'])) {
                                 </tr>
                                 <tr>
                                     <td class="ps-3">
-                                       REF-108245
+                                        REF-108245
                                     </td>
                                     <td>Muhammad Ahmed</td>
-                                    
+
                                     <td>
                                         <span class="badge bg-light text-dark border fw-normal">Obstruction</span>
                                     </td>
                                     <td>Traffic Police</td>
-                                   
+
                                     <td class="text-center">
                                         <a class="btn btn-sm btn-light border shadow-sm" href="./impoundment-form.php">
                                             <i class="fas fa-eye text-primary"></i>
@@ -128,15 +128,15 @@ if (!isset($_SESSION['user'])) {
                                 </tr>
                                 <tr>
                                     <td class="ps-3">
-                                       REF-108245
+                                        REF-108245
                                     </td>
                                     <td>Muhammad Ahmed</td>
-                                    
+
                                     <td>
                                         <span class="badge bg-light text-dark border fw-normal">Obstruction</span>
                                     </td>
                                     <td>Traffic Police</td>
-                                   
+
                                     <td class="text-center">
                                         <a class="btn btn-sm btn-light border shadow-sm" href="./impoundment-form.php">
                                             <i class="fas fa-eye text-primary"></i>
@@ -145,15 +145,15 @@ if (!isset($_SESSION['user'])) {
                                 </tr>
                                 <tr>
                                     <td class="ps-3">
-                                       REF-108245
+                                        REF-108245
                                     </td>
                                     <td>Muhammad Ahmed</td>
-                                    
+
                                     <td>
                                         <span class="badge bg-light text-dark border fw-normal">Obstruction</span>
                                     </td>
                                     <td>Traffic Police</td>
-                                   
+
                                     <td class="text-center">
                                         <a class="btn btn-sm btn-light border shadow-sm" href="./impoundment-form.php">
                                             <i class="fas fa-eye text-primary"></i>
@@ -167,7 +167,7 @@ if (!isset($_SESSION['user'])) {
             </div>
         </div>
 
-    <?php include("../footer.php"); ?>
+        <?php include("../footer.php"); ?>
     </div>
 </div>
 
@@ -212,8 +212,17 @@ if (!isset($_SESSION['user'])) {
                     </div>
 
                     <div class="col-md-6">
-                        <label class="small fw-bold mb-1">Authority Involved</label>
-                        <input type="text" class="form-control border-dark shadow-sm" value="Traffic Police, RTO" />
+                        <label class="small fw-bold mb-1 ">Authority Involved</label>
+                        <select class="form-select border-dark shadow-sm">
+                            <option selected disabled>Select Authority...</option>
+                            <option value="traffic_police">Traffic Police</option>
+                            <option value="motorway_police">Motorway Police (NH&MP)</option>
+                            <option value="rto">RTO (Regional Transport Office)</option>
+                            <option value="excise">Excise & Taxation</option>
+                            <option value="customs">Customs Authority</option>
+                            <option value="local_police">Local Police Station</option>
+                            <option value="legal_team">Internal Legal Team</option>
+                        </select>
                     </div>
 
                     <div class="col-md-6">
@@ -245,4 +254,3 @@ if (!isset($_SESSION['user'])) {
         </div>
     </div>
 </div>
-

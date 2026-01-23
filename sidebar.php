@@ -22,16 +22,18 @@ define('CURRENT_PAGE', basename($_SERVER['PHP_SELF']));
 
 <div id="sidebar">
     
-    <div class="d-md-none text-end p-2">
-        <button type="button" class="btn text-white p-0" onclick="toggleSidebar()" aria-label="Close">
-            <i class="fas fa-times fa-lg"></i>
-        </button>
-    </div>
-
-    <div class="logo-area d-flex align-items-center justify-content-center">
+   <div class="logo-area d-flex justify-content-between align-items-center">
+     
+    <div class=" d-flex align-items-center justify-content-center">
         <img src="https://devedenspell.com/MD/image/logo.png" class="logo-img" alt="Logo" />
         <span class="vms-brand">CHAMPS VMA</span>
     </div>
+    <div class="d-md-none text-end p-2">
+        <button type="button" class="btn  p-0" style="color: var(--secondary)" onclick="toggleSidebar()" aria-label="Close">
+            <i class="fas fa-times fa-lg"></i>
+        </button>
+    </div>
+   </div>
 
     <nav class="nav nav-menu d-block">
 

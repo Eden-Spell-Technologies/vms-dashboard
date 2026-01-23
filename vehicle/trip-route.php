@@ -7,19 +7,19 @@ if (!isset($_SESSION['user'])) {
 ?>
 
 <?php
-  include("../header_meta.php");
-  ?>
+include("../header_meta.php");
+?>
 
 <div id="dashboard-page">
 
-  <?php
-  include("../sidebar.php");
-  ?>
-  <div id="main-wrapper">
     <?php
-    include("../nav.php");
-
+    include("../sidebar.php");
     ?>
+    <div id="main-wrapper">
+        <?php
+        include("../nav.php");
+
+        ?>
 
         <!-- route and destination -->
         <div id="route-mgmt-view" class="px-4 px-md-5 py-4">
@@ -100,7 +100,8 @@ if (!isset($_SESSION['user'])) {
                                     <th>Route</th>
                                     <th>Driver Name</th>
                                     <th>Current Location</th>
-                                    <th>FInal Destination</th>     
+                                    <th>FInal Destination</th>
+                                    <th>Status</th>
                                     <th class="text-center">Action</th>
                                 </tr>
                             </thead>
@@ -110,6 +111,12 @@ if (!isset($_SESSION['user'])) {
                                     <td>Zaid Ali</td>
                                     <td>Peshawar</td>
                                     <td>Lahore</td>
+                                    <td>
+                                        <span
+                                            class="badge bg-success-subtle text-success border border-success-subtle px-3 py-2 rounded-pill small">
+                                            <i class="fas fa-circle me-1 extra-small"></i> Active
+                                        </span>
+                                    </td>
                                     <td class="text-center">
                                         <a class="btn btn-sm btn-light border shadow-sm" href="./trip-route-form.php">
                                             <i class="fas fa-eye text-primary"></i>
@@ -121,29 +128,46 @@ if (!isset($_SESSION['user'])) {
                                     <td>Ali Raza</td>
                                     <td>Karachi</td>
                                     <td>Peshawar</td>
+                                    <td>
+                                        <span
+                                            class="badge bg-primary-subtle text-primary border border-primary-subtle px-3 py-2 rounded-pill small">
+                                            <i class="fas fa-check-double me-1 extra-small"></i> Completed
+                                        </span>
+                                    </td>
                                     <td class="text-center">
                                         <a class="btn btn-sm btn-light border shadow-sm" href="./trip-route-form.php">
                                             <i class="fas fa-eye text-primary"></i>
                                         </a>
                                     </td>
                                 </tr>
-                                 <tr>
+                                <tr>
                                     <td class="">GT Road</td>
                                     <td>Ali Raza</td>
                                     <td>Islamabad</td>
                                     <td>Peshawar</td>
-                                    
+                                    <td>
+                                        <span
+                                            class="badge bg-warning-subtle text-dark border border-warning-subtle px-3 py-2 rounded-pill small">
+                                            <i class="fas fa-clock me-1 extra-small"></i> Awaiting
+                                        </span>
+                                    </td>
                                     <td class="text-center">
                                         <a class="btn btn-sm btn-light border shadow-sm" href="./trip-route-form.php">
                                             <i class="fas fa-eye text-primary"></i>
                                         </a>
                                     </td>
                                 </tr>
-                                 <tr>
+                                <tr>
                                     <td class="">GT Road</td>
                                     <td>Ali Raza</td>
                                     <td>Peshawar</td>
                                     <td>Lahore</td>
+                                    <td>
+                                        <span
+                                            class="badge bg-danger-subtle text-danger border border-danger-subtle px-3 py-2 rounded-pill small">
+                                            <i class="fas fa-times-circle me-1 extra-small"></i> Canceled
+                                        </span>
+                                    </td>
                                     <td class="text-center">
                                         <a class="btn btn-sm btn-light border shadow-sm" href="./trip-route-form.php">
                                             <i class="fas fa-eye text-primary"></i>
@@ -192,21 +216,37 @@ if (!isset($_SESSION['user'])) {
 
                         <div class="col-md-6">
                             <label class="small fw-bold mb-1">Driver Name</label>
-                            <input type="text" class="form-control border-dark shadow-sm" value="Zaid Ali" />
+                            <select class="form-select border-dark shadow-sm">
+                                <option selected disabled>Choose Driver...</option>
+                                <option value="zaid_ali">Zaid Ali</option>
+                                <option value="ahmed_khan">Ahmed Khan</option>
+                                <option value="sajid_shah">Sajid Shah</option>
+                                <option value="imran_raza">Imran Raza</option>
+                            </select>
                         </div>
 
 
 
                         <div class="col-md-6">
-                            <label class="small fw-bold mb-1">Driver Mate Name</label>
-                            <input type="text" class="form-control border-dark shadow-sm" value="Aslam Khan" />
+                            <label class="small fw-bold mb-1 ">Driver Mate Name</label>
+                            <select class="form-select border-dark shadow-sm">
+                                <option selected disabled>Choose Driver Mate...</option>
+                                <option value="zaid_ali">Zaid Ali</option>
+                                <option value="ahmed_khan">Ahmed Khan</option>
+                                <option value="sajid_shah">Sajid Shah</option>
+                                <option value="imran_raza">Imran Raza</option>
+                            </select>
                         </div>
-
-
 
                         <div class="col-md-6">
                             <label class="small fw-bold mb-1">Vehicle Registration Number</label>
-                            <input type="text" class="form-control border-dark shadow-sm" value="VH-789" />
+                            <select class="form-select border-dark shadow-sm">
+                                <option selected disabled>Choose Vehicle...</option>
+                                <option value="vh-789">VH-789 </option>
+                                <option value="vh-456">VH-456</option>
+                                <option value="vh-123">VH-123</option>
+                                <option value="vh-999">VH-999</option>
+                            </select>
                         </div>
 
                         <div class="col-md-6">
